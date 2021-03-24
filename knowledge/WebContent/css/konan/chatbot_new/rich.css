@@ -1,0 +1,175 @@
+/*Rich Template*/
+.richarea {background-color:#efefef; border:1px solid #ccc; border-radius: 3px; padding:5px;}
+.richarea .richheader {border-radius: 3px; padding: 5px 5px 0 5px; }
+.richarea .richheader .richbtn-group {width:87%; padding-left:1%; padding-right: 0;}
+.richarea .richheader .richbtn-group .btn, .richarea .richheader .richbtn-group .btn:focus {background-color:transparent; border:none; color:#fff; font-size:12px; padding:0; }
+.richarea .richheader .richbtn-group .btn i {display:inline-block; height:30px; width:30px;}
+.richarea .richheader .richbtn-group .btn[data-type=title] i {background:transparent url(../img/rich/title.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=subtitle] i {background:transparent url(../img/rich/subtitle.png) no-repeat center top; width:40px; }
+.richarea .richheader .richbtn-group .btn[data-type=image] i {background:transparent url(../img/rich/image.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=buttons] i {background:transparent url(../img/rich/buttons.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=link] i {background:transparent url(../img/rich/link.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=text] i {background:transparent url(../img/rich/text.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=iframe] i {background:transparent url(../img/rich/iframe.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=video] i {background:transparent url(../img/rich/video.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=audio] i {background:transparent url(../img/rich/audio.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=expansion] i {background:transparent url(../img/rich/expansion.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=any] i {background:transparent url(../img/rich/any.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=tts] i {background:transparent url(../img/rich/tts.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=carousel] i {background:transparent url(../img/rich/carousel.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=title]:hover i  {background:transparent url(../img/rich/title_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=subtitle]:hover i {background:transparent url(../img/rich/subtitle_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=image]:hover i  {background:transparent url(../img/rich/image_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=buttons]:hover i {background:transparent url(../img/rich/buttons_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=link]:hover i {background:transparent url(../img/rich/link_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=text]:hover i {background:transparent url(../img/rich/text_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=iframe]:hover i {background:transparent url(../img/rich/iframe_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=video]:hover i {background:transparent url(../img/rich/video_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=audio]:hover i {background:transparent url(../img/rich/audio_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=expansion]:hover i {background:transparent url(../img/rich/expansion_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=any]:hover i {background:transparent url(../img/rich/any_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=tts]:hover i {background:transparent url(../img/rich/tts_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=carousel]:hover i {background:transparent url(../img/rich/carousel_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=carousel]:disabled i {background:transparent url(../img/rich/carousel_disable.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn[data-type=tts]:disabled i {background:transparent url(../img/rich/tts_disable.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn-addcard i {background:transparent url(../img/rich/addcard.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn-delcard i {background:transparent url(../img/rich/delcard.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn-addcard:hover i {background:transparent url(../img/rich/addcard_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn-delcard:hover i {background:transparent url(../img/rich/delcard_hover.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn-addcard:disabled  i {background:transparent url(../img/rich/addcard_disable.png) no-repeat center top;}
+.richarea .richheader .richbtn-group .btn-delcard:disabled  i{background:transparent url(../img/rich/delcard_disable.png) no-repeat center top;}
+
+
+.richarea .richheader .richtemplate {padding:0; width: 13%;}
+.richarea .richheader .richtemplate select {border:1px solid #ccc; height:30px; line-height:30px; padding:5px 10px; margin-bottom: 5px; display:inline-block; vertical-align:top;}
+
+#tab_initial .richarea .richheader .richtemplate {width:12%;}
+#tab_conditions .richarea, .parameter-wrap .richarea {background:#fff;}
+#tab_conditions .richarea .richtmpl.tmpl-link .elem-edit, .parameter-wrap .richarea .richtmpl.tmpl-link .elem-edit {background-color:#eee;}
+
+.richarea .richbody {border-radius: 3px; padding:5px; margin-bottom: 0;}
+
+.richtmpl {margin:0 0 5px 0!important; padding-right: 14px;}
+
+.richtmpl .richtmpl-del {float:left; top:3px; right:28px; position:absolute; color:#ccc;}
+.richtmpl .richtmpl-del:hover {color:#908174;}
+.richtmpl .richtmpl-del .btn {border:0; padding:0; background-color:transparent;}
+.richtmpl .richtmpl-del .btn:hover {color:#908174;}
+
+.richtmpl input[type=text]::-ms-clear { display: none; }
+
+.richtmpl.tmpl-input .elem-form .elem {width:100%; height:32px; cursor:pointer; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;} 
+.richtmpl.tmpl-input .elem-form input[type=text] {padding-right:28px;}
+
+.richtmpl.tmpl-expansion .elem-form .elem {width:100%; height:32px; cursor:pointer; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;}
+.richtmpl.tmpl-expansion .elem-form input[type=text] {padding-right:28px;}
+
+.richtmpl.tmpl-text .elem-form .elem {word-break:break-all; word-wrap:break-word; white-space: pre-wrap; height:auto; min-height: 32px;} 
+.richtmpl.tmpl-text .elem-form textarea {height:129px;}
+.richtmpl.tmpl-text .elem-form .note-editor {font-size:12px; margin-bottom:5px;}
+.richtmpl.tmpl-text .elem-form .note-editor .note-toolbar .note-fontsize .dropdown-menu {min-width:45px; font-size:13px;}
+.richtmpl.tmpl-text .elem-form .note-editor .note-toolbar .note-fontsize .dropdown-menu li a {padding:0;}
+.richtmpl.tmpl-text .elem-form .note-editing-area ol {list-style-type: decimal;}
+.richtmpl.tmpl-text .elem-form .note-editing-area ul {list-style-type: disc;}
+.richtmpl.tmpl-text .elem-form .note-editing-area .note-editable {font-size:12px; min-height:80px; height:80px;}
+.richtmpl.tmpl-text .elem-form .note-editing-area .note-codable {font-size:12px; min-height:80px; height:80px;}
+.richtmpl.tmpl-text .elem-form .elem-edit {width: 100%; padding: 5px 10px; border-radius: 3px; display: inline-block; background-color: #fff; border: 1px solid #ccc;} 
+.richtmpl.tmpl-text .elem-form .elem-edit .elem-value {line-height: 1.5; border: 1px solid #ccc; display: block; float: left; margin-bottom: 5px; cursor:pointer;}
+.richtmpl.tmpl-text .elem-form .elem-edit .elem-value:focus {cursor:text; border-color: #66afe9;}
+.richtmpl.tmpl-text .btn-editor { padding:0; margin-left:3px; margin-right:-6px; font-weight: bold; background-color: transparent;}
+
+.richtmpl.tmpl-image .elem {min-height: 140px; border: 2px dashed rgba(0, 0, 0, 0.1); border-radius: 3px; align-items: center; color:#ccc; /* cursor:pointer; */ display: flex; margin-bottom: 8px;}
+.richtmpl.tmpl-image .elem.loaded {border:1px solid #ccc; min-height:auto; display:block;}
+.richtmpl.tmpl-image .elem .elem-img {max-width:100%; margin:auto; display: flex;}
+ 
+.richtmpl.tmpl-media .elem {width:100%; min-height:auto; text-align:center; align-items: center; cursor:pointer; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;}
+.richtmpl.tmpl-media .elem-edit input[type=text] {padding-right:28px; height:32px; font-size: 12px; line-height: 1.5;}
+.richtmpl.tmpl-audio .elem {height: 100px; display:flex;}
+.richtmpl.tmpl-audio .elem .media-form {width:100%; background-color:#f1f3f4;}
+ 
+.richtmpl.tmpl-link .elem {border-color: #ccc; width:100%; text-align:center; background-color:#fff;}
+.richtmpl.tmpl-link .elem:active {box-shadow: none; -webkit-box-shadow: none;}
+.richtmpl.tmpl-link .elem-edit {border:1px solid #ccc; border-radius: 3px; padding:5px 10px; border-top:0; background-color:#fff;}
+.richtmpl.tmpl-link .elem-edit input {margin-bottom:5px;}
+.richtmpl.tmpl-link .elem-edit input:last-child {margin-bottom:0;}
+.richtmpl.tmpl-link .elem-edit label {margin-left: 2px;}
+.richtmpl.tmpl-link span.elem-name {width: 90%; display: inline-block;}
+
+.richtmpl .richtmpl-border {border: 1px solid #ccc; border-radius: 3px; padding: 8px 8px 8px 8px; background-color:#fff;}
+.richtmpl.tmpl-buttons .elem-form-group {width:100%; margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem-form {margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem {background-color: #ddd; border-color: #ddd; width:100%;}
+.richtmpl.tmpl-buttons .elem:hover {background-color: #ccc; border-color: #ccc;}
+.richtmpl.tmpl-buttons .elem-edit {border:1px solid #ccc; border-radius: 3px; padding:5px 10px; border-top:0;}
+.richtmpl.tmpl-buttons .elem-edit select {margin-bottom:5px; padding:5px; border-radius:3px;}
+.richtmpl.tmpl-buttons .elem-edit select.elem-type {border:1px solid #ccc;}
+
+.richtmpl.tmpl-buttons .elem-edit input {margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem-edit input:last-child {margin-bottom:0;}
+.richtmpl.tmpl-buttons .elem-form-add {margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem-form-add .btn {color:#555; background-color:#fff; border: 2px dashed rgba(0, 0, 0, 0.1); border-radius: 3px; width:100%; height:32px; font-size: 12px; line-height:1.5; display:block; }
+.richtmpl.tmpl-buttons .elem-form-add .btn:hover {border-color:#aaa; }
+.richtmpl.tmpl-buttons .elem-form-align {text-align:right; font-size:14px;}
+.richtmpl.tmpl-buttons .elem-form-align label {padding-right:10px; text-align:center; vertical-align:middle;}
+.richtmpl.tmpl-buttons .elem-form-align .elem-icon {cursor:pointer; padding: 0; font-size: 20px; border-radius:3px; color:#555; text-align:center; vertical-align:middle;}
+.richtmpl.tmpl-buttons .elem-form-align .elem-icon:hover, .richtmpl.tmpl-buttons .elem-form-align .elem-icon.active {background-color: #ddd;}
+.richtmpl.tmpl-buttons .elem-form-align .elem-icon i {width: 27px;}
+
+.richtmpl.tmpl-button {padding-right:0;} 
+.richtmpl.tmpl-button span.elem-name {width: 90%; display: inline-block;}
+.richtmpl.tmpl-button .button-goto {float:none; width: 100%; padding:0;}
+
+.richtmpl .elem-iconelem-icon {font-size:12px; padding:0 5px; } 
+.richtmpl .icon-left {float:left;}
+.richtmpl .icon-right {float:right; color:#999}
+
+.richtmpl.tmpl-image .elem-title { width: calc(100% - 90px); height: 32px; border: 1px solid #ccc; min-height: 32px; display: inline-block;color: #555;font-size: 12px; line-height: 1.5;padding: 5px 10px;}
+.richtmpl.tmpl-image .elem-edit { width: calc(100% - 90px); margin-bottom: 13px; display: inline-block; } 
+.richtmpl.tmpl-image .richtmpl-border button { height:32px; border-color: #fff; color: #fff; background-color: #ddd; margin-left: 3px; position: absolute; }
+
+.richtmpl.tmpl-plain {padding:0;}
+
+.richtmpl.tmpl-invalid {border: 1px solid #c58585; border-radius: 3px; height:32px; background: #e6cbcb; cursor:pointer; width:92%; margin: 0 auto 5px!important;}
+.richtmpl.tmpl-invalid::before {display:block; color:#a24343; font-size: 12px; font-weight: bold; text-align: center; vertical-align: middle; line-height: 28px; height: 28px; width: 100%;}
+.richtmpl.tmpl-invalid .richtmpl-del {right:3px;}
+.richtmpl.tmpl-invalid .richtmpl-del .btn {color: #c58585;} 
+.richtmpl.tmpl-invalid .richtmpl-del .btn:hover {color: #a24343;}
+
+.richtmpl.tmpl-any .control-label {padding:0 0 0 20px!important;}
+.richtmpl.tmpl-any .control-label .form-control {text-align:right; padding: 5px;}
+
+.richtmpl.tmpl-tts .elem-form {border:1px solid #ccc; border-radius: 3px; padding:5px 10px; background-color:#fff; }
+.richtmpl.tmpl-tts .elem-form .elem {width:100%; height:32px; cursor:pointer; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;}
+.richtmpl.tmpl-tts .elem-form input[type=text] {padding-right:28px;} 
+.richtmpl.tmpl-tts .checkbox label {padding-right:20px;}
+
+.richtmpl.tmpl-carousel {border: 2px dashed #ddd; border-radius: 3px; padding-right:0;}
+.richtmpl.tmpl-carousel.selected {background-color:#f9f9f9;}
+
+.richtmpl.tmpl-carousel .btn-vertical-wrap {top: -10px; right: -10px; float: left;}
+.richtmpl.tmpl-carousel .btn-vertical-wrap .btn {color: #908174; background-color: #fff; padding: 0; margin: 0; border: 1px dashed; border-radius: 10px; width: auto;}
+.richtmpl.tmpl-carousel .btn-vertical-wrap .btn:hover {background-color: #f0ece6;}
+.richtmpl.tmpl-carousel .richtmpl-del {right:26px;}
+.richtmpl.tmpl-carousel .richtmpl.tmpl-invalid .richtmpl-del {right:1px;}
+
+.richtmpl.tmpl-carousel .carousel-inner { margin: 5px auto;}
+.richtmpl.tmpl-carousel .carousel-control {width: 4%; padding-bottom: 22px; color: #908174; background-image: none;}
+.richtmpl.tmpl-carousel .carousel-control .glyphicon-chevron-left::before {content: "\34";}
+.richtmpl.tmpl-carousel .carousel-control .glyphicon-chevron-right::before {content: "\35";}
+.richtmpl.tmpl-carousel .carousel-indicators {position:relative; bottom:0; margin:0; width:100%; left:0; font-size: 0; padding-bottom: 6px;}
+.richtmpl.tmpl-carousel .carousel-indicators li {width:10px; height:10px; margin:1px 2px; background-color: #c5c6c7; vertical-align:bottom;}
+.richtmpl.tmpl-carousel .carousel-indicators .active {width: 12px; height: 12px; margin: 0; background-color: #6894bf;}
+
+.richtmpl.tmpl-carousel .richcard:empty::before {color:#999; content:"no_data"; font-size:13px; height:32px; line-height:30px; display:block; text-align:center; /* background:#eee; border:1px dotted; border-radius: 2px; */}
+
+.has-error .control-label {color:#333;}
+.has-error .richarea, 
+.has-error .richarea .form-group,
+.has-error .richarea .form-control,
+.has-error .richarea .richtmpl.tmpl-input .elem,
+.has-error .richarea .richtmpl.tmpl-expansion .elem,
+.has-error .richarea .richtmpl.tmpl-link .elem,
+.has-error .richarea .richtmpl .richtmpl-border {border-color: #a94442!important;}
+
+.richarea .ellipsis {white-space: nowrap; overflow: hidden; text-overflow: ellipsis; -o-text-overflow: ellipsis; }
+

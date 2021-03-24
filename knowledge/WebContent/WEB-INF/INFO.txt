@@ -1,0 +1,33 @@
+
+classes/egovframework.property
+		db.properties
+		global.properties
+		
+		
+WebContent/js/konan/chatbot/chat/admin.js
+		
+			http://127.0.0.1:7614/konanbot/chat/open
+			http://127.0.0.1:7614/konanbot/chat/message
+			==>
+			
+			http://konanservice.is.hbpop.io/konanbot/chat/open
+			http://konanservice.is.hbpop.io/konanbot/chat/message
+			
+
+Tomcat or Eclipse IPv4 Setting <- 해당 셋팅을 해줘야 Client IP를 IPv4로 가져온다. Default IPv6
+	1) Eclipse
+		Run > Run Configurations > Arguments Tab > VM arguments
+			-Djava.net.preferIPv4Stack=true 추가
+			
+	2) Tomcat
+		Catalina.bat or Catalina.sh 에서 set "JAVA_OPTS=%JAVA_OPTS%" 찾아 아래에
+		    set "JAVA_OPTS=%JAVA_OPTS% -Djava.net.preferIPv4Stack=true" 추가
+			
+Tomcat setting (Add sharing session) - 패턴관리기 설정
+	context.xml
+		<Context> ==> <Context crossContext="true">
+		
+	server.xml
+		<Connector URIEncoding="UTF-8" connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+		==>
+		<Connector URIEncoding="UTF-8" connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" emptySessionPath="true"/>

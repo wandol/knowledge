@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd"> -->
+ 
+<mapper namespace="DocMapper">
+
+	<!-- 카테고리 정보 insert -->
+	<insert id="insertCategoryInfo" parameterType="DocCategoryVO">
+		INSERT
+		  INTO tb_gen_doc_category(
+		  	CAT_IDX,
+		  	CAT_NM,
+		  	ORDER_NO,
+		  	USE_YN,
+		  	OPERATOR_ID,
+		  	OPERATE_NM,
+		  	OPERATE_TM
+		  )
+		VALUES
+		(
+			(SELECT IF(ISNULL(MAX(A.CAT_IDX)), '1000', MAX(A.CAT_IDX) + 1) AS CAT_IDX FROM tb_gen_doc_category A),
+			#{cat_nm},
+			#{order_no},
+			'Y',
+			#{operator_id},
+			#{operate_nm},
+			NOW()
+		)
+	</insert>
+	
+	<!-- 카테고리 정보 select -->
+	<select id="selectCategoryList" resultType="DocCategoryVO">
+		SELECT   C.CAT_IDX
+		        ,C.USE
+			    ,C.CAT_NM
+				,C.ORDER_NO
+				,C.OPERATOR_ID
+				,C.OPERATE_NM
+				,C.OPERATE_TM
+				,SUM(IFNULL(C.ATT_CNT,0)) file_count
+				,IF(ISNULL(C.CAT_IDX), 0, COUNT(C.DOC_IDX)) AS row_count
+		  FROM (    
+				SELECT A.CAT_IDX
+				      ,A.CAT_NM
+				      ,A.ORDER_NO
+				      ,A.USE_YN AS 'USE'
+				      ,A.OPERATOR_ID
+				      ,A.OPERATE_NM
+				      ,A.OPERATE_TM
+				      ,B.ATT_CNT
+                      ,B.DOC_IDX
+				 FROM tb_gen_doc_category A LEFT OUTER JOIN tb_gen_doc B
+				   ON A.CAT_IDX = B.CAT_IDX
+				) C
+		GROUP BY C.CAT_IDX
+		ORDER BY C.ORDER_NO ASC, C.OPERATE_TM DESC
+	</select>
+	
+	<!-- 카테고리 건수 조회 : 현재 사용안함. 카테고리 리스트가 페이징되면 사용할 수도 있음. -->
+	<!-- 
+	<select id="selectCategoryTotalCount" resultType="Integer">
+		SELECT COUNT(*) COUNT FROM tb_gen_doc_category
+	</select> 
+	-->
+	
+		<!-- 카테고리 정보 select -->
+	<select id="selectCategorySelectList" resultType="DocCategoryVO">
+		SELECT CAT_IDX
+		      ,CAT_NM
+		 FROM tb_gen_doc_category
+		 WHERE USE_YN = 'Y'
+		ORDER BY ORDER_NO ASC
+	</select>
+	
+	<!-- 카테고리 정보 중복체크 -->
+	<select id="selectCheckCategory" parameterType="DocCategoryVO" resultType="Integer">
+		SELECT COUNT(*) COUNT
+		  FROM tb_gen_doc_category
+		<where>
+			AND CAT_NM = #{cat_nm}
+			AND ORDER_NO = #{order_no}
+		</where>
+	</select>
+	
+	<!-- 카테고리 삭제 -->
+	<delete id="deleteCategory" parameterType="hashmap">
+		DELETE
+		  FROM tb_gen_doc_category
+		 WHERE CAT_IDX IN
+		 <foreach collection="list" item="item" separator="," open="(" close=")">
+			#{item.cat_idx}
+		</foreach>
+	</delete>
+	
+	<!-- 카테고리 삭제 시 관련 문서테이블 삭제 -->
+	<delete id="deleteDocumentByCategory" parameterType="hashmap">
+		DELETE FROM tb_gen_doc
+		 WHERE CAT_IDX IN
+		 <foreach collection="list" item="item" separator="," open="(" close=")">
+			#{item.cat_idx}
+		</foreach>
+	</delete>
+	
+	<!-- 카테고리 삭제 시 관련 첨부파일 테이블 삭제 -->
+	<delete id="deleteDocumentAttachByCategory" parameterType="hashmap">
+		DELETE FROM tb_gen_doc_attach
+		 WHERE DOC_IDX IN (
+			SELECT DOC_IDX
+			  FROM tb_gen_doc
+			 WHERE CAT_IDX IN 
+			 	<foreach collection="list" item="item" separator="," open="(" close=")">
+					#{item.cat_idx}
+				</foreach>
+		 )
+	</delete>
+	
+	<!-- 카테고리 정보 수정 -->
+	<update id="updateCategory" parameterType="DocCategoryVO">
+		UPDATE tb_gen_doc_category
+		   SET CAT_NM = #{cat_nm}
+		      ,ORDER_NO = #{order_no}
+		      ,USE_YN = #{use}
+		      ,OPERATE_TM = NOW()
+		 WHERE CAT_IDX = #{cat_idx}
+	</update>
+	
+	<!-- 발전문서 카테고리 명 수정 -->
+	<update id="updateDocumentCategoryNM" parameterType="DocCategoryVO">
+		UPDATE tb_gen_doc
+		   SET CAT_NM = #{cat_nm}
+		 WHERE CAT_IDX = #{cat_idx}
+	</update>
+	
+	<!-- 발전 문서 추가 -->
+	<insert id="insertDocument" parameterType="DocumentVO">
+		INSERT 
+		  INTO tb_gen_doc(
+		  	CAT_IDX
+		   ,CAT_NM
+		   ,TTL
+		   ,ABSTRACT
+		   ,KWD
+		   ,ATT_CNT
+		   ,DEL_YN
+		   ,REG_ID
+		   ,REG_NM
+		   ,REG_TM
+		   ,OPERATE_TM
+		  )
+		VALUES (
+			#{cat_idx}
+		   ,(SELECT A.CAT_NM FROM tb_gen_doc_category A WHERE A.CAT_IDX = #{cat_idx})
+		   ,#{docTitle}
+		   ,#{docContents}
+		   ,#{docKeyword}
+		   ,#{att_cnt}
+		   ,'N'
+		   ,#{reg_id}
+		   ,#{reg_nm}
+		   ,NOW()
+		   ,NOW()
+		)
+		<selectKey keyProperty="doc_idx" resultType="String" order="AFTER">
+	        SELECT MAX(DOC_IDX)
+	          FROM tb_gen_doc;
+	    </selectKey>
+	</insert>
+	
+	<!-- 발전문서 첨부파일 추가 -->
+	<insert id="insertDocumentAttach" parameterType="java.util.List">
+		INSERT
+		  INTO tb_gen_doc_attach(
+		  	DOC_IDX
+		   ,SEQ
+		   ,FILE_NM
+		   ,FILE_PATH
+		   ,FILE_SIZE
+		   ,DEL_YN
+		   ,REG_ID
+		   ,REG_NM
+		   ,REG_TM
+		   ,OPERATE_TM
+		  )
+		VALUES
+		<foreach collection="list" item="item" separator=",">
+		(
+			#{item.doc_idx}
+		   ,#{item.seq}
+		   ,#{item.file_nm}
+		   ,#{item.file_path}
+		   ,#{item.file_size}
+		   ,'N'
+		   ,#{item.reg_id}
+		   ,#{item.reg_nm}
+		   ,NOW()
+		   ,NOW()
+		)
+		</foreach>
+	</insert>
+	
+	<!-- 발전문서 조회 -->
+	<select id="selectDocument" parameterType="ParameterVO" resultType="DocumentVO">
+		SELECT A.DOC_IDX
+		      ,A.CAT_IDX
+		      ,A.CAT_NM
+		      ,A.TTL AS docTitle
+		      ,A.ABSTRACT AS docContents
+		      ,A.KWD AS docKeyword
+		      ,A.ATT_CNT
+		      ,A.DEL_YN
+		      ,A.REG_ID
+		      ,A.REG_NM
+		      ,A.REG_TM
+		      ,A.OPERATE_TM
+		      ,GROUP_CONCAT(B.FILE_NM) AS FILE_LIST
+		      ,B.FILE_PATH
+		  FROM tb_gen_doc A, tb_gen_doc_attach B
+		 WHERE A.DOC_IDX = B.DOC_IDX
+		 <if test='kwd !=null and kwd != ""'>
+		 	AND 
+		 	 (
+		 	 A.TTL LIKE CONCAT('%', #{kwd}, '%')
+		 	 OR A.ABSTRACT LIKE CONCAT('%', #{kwd}, '%')
+		 	 OR A.KWD LIKE CONCAT('%', #{kwd}, '%')
+		 	 OR A.REG_NM LIKE CONCAT('%', #{kwd}, '%')
+		 	 )
+		 </if>
+		 GROUP BY A.DOC_IDX
+		 ORDER BY A.OPERATE_TM DESC
+		 LIMIT #{offSet}, ${pageSize}
+	</select>
+	
+	<select id="selectDocumentTotalCount" resultType="Integer">
+		SELECT COUNT(*)
+		  FROM (
+		  	SELECT A.DOC_IDX
+		      ,A.CAT_IDX
+		      ,A.CAT_NM
+		      ,A.TTL AS docTitle
+		      ,A.ABSTRACT AS docContents
+		      ,A.KWD AS docKeyword
+		      ,A.ATT_CNT
+		      ,A.DEL_YN
+		      ,A.REG_ID
+		      ,A.REG_NM
+		      ,A.REG_TM
+		      ,A.OPERATE_TM
+		      ,GROUP_CONCAT(B.FILE_NM) AS FILE_LIST
+		      ,B.FILE_PATH
+		  FROM tb_gen_doc A, tb_gen_doc_attach B
+		 WHERE A.DOC_IDX = B.DOC_IDX
+		 GROUP BY A.DOC_IDX
+		  ) C
+	</select>
+	
+	<!-- 발전문서 파일리스트 : 문서 ID로 호출 -->
+	<select id="selectDocumentFileListByDocID" parameterType="String" resultType="hashmap">
+		SELECT
+			DOC_IDX
+			,FILE_NM
+			,FILE_PATH
+			, CONCAT(FILE_PATH,'/',FILE_NM) FILE_FULL_PATH
+		FROM tb_gen_doc_attach
+		WHERE DEL_YN = 'N'
+			AND DOC_IDX = #{doc_idx}
+	</select>
+	
+	<select id="selectDocumentFileListByCategory" parameterType="String" resultType="hashmap">
+		SELECT 
+			DOC_IDX
+			,FILE_NM
+			,FILE_PATH
+			, CONCAT(FILE_PATH,'/',FILE_NM) FILE_FULL_PATH
+			FROM tb_gen_doc_attach
+		 WHERE DOC_IDX IN (
+			SELECT DOC_IDX
+			  FROM tb_gen_doc
+			 WHERE CAT_IDX IN 
+			 	<foreach collection="list" item="item" separator="," open="(" close=")">
+					#{item.cat_idx}
+				</foreach>
+		 )
+	</select>
+	
+	<!-- 발전문서 수정 -->
+	<update id="updateDocument" parameterType="DocumentVO">
+		UPDATE tb_gen_doc
+		   SET CAT_IDX = #{cat_idx}
+		      ,CAT_NM = #{cat_nm}
+		      ,TTL = #{docTitle}
+		      ,ABSTRACT = #{docContents}
+		      ,KWD = #{docKeyword}
+		 WHERE DOC_IDX = #{doc_idx}
+	</update>
+	
+	<!-- 발전문서 삭제 -->
+	<delete id="deleteDocument" parameterType="hashmap">
+		DELETE
+		  FROM tb_gen_doc
+		 WHERE DOC_IDX IN
+		 <foreach collection="list" item="item" separator="," open="(" close=")">
+			#{item.doc_idx}
+		</foreach>
+	</delete>
+	
+	<!-- 발전문서 첨부파일 삭제 -->
+	<delete id="deleteDocumentAttach" parameterType="hashmap">
+		DELETE
+		  FROM tb_gen_doc_attach
+		 WHERE DOC_IDX IN
+		 <foreach collection="list" item="item" separator="," open="(" close=")">
+			#{item.doc_idx}
+		</foreach>
+	</delete>
+</mapper>

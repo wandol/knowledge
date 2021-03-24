@@ -1,0 +1,8 @@
+.tagging {    color: teal; font-weight: bold;}
+.sentence-hilight {background-color: skyblue; color: #ffffff;}
+.symantic { color: orange; font-weight: bold; }
+.symantic-hilight { color: blue; font-weight: bold;}
+.ner-hilight { color: cadetblue; background-color: bisque; font-weight: bold; padding: 3px;}
+
+/* 이미지보기 이미지 배열이 뒤죽박죽인 현상 때문에 기존 css inline-block -> inline-grid로 수정*/
+.superbox-list { display: inline-grid !important;}

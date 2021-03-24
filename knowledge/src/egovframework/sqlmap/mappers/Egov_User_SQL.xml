@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd"> -->
+ 
+<mapper namespace="UserMapper">
+
+	<select id="selectUserCheck" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS COUNT
+		  FROM tb_user_info
+		 WHERE USER_NM = #{id}
+		   AND USER_PW = #{passwd}
+	</select>
+	
+	<select id="selectUserInfo" parameterType="hashmap" resultType="UserVO">
+		SELECT *
+		  FROM tb_user_info
+		 WHERE USER_NM = #{id}
+		   AND USER_PW = #{passwd}
+	</select>
+	
+	<select id="selectUserList" parameterType="hashmap" resultType="UserVO">
+		SELECT *
+		  FROM tb_user_info
+		 ORDER BY USER_ID ASC
+	</select>
+		
+<!-- 	<select id="selectUserList" parameterType="hashmap" resultType="UserVO"> -->
+<!-- 		<![CDATA[ -->
+<!-- 		SELECT A.* FROM ( -->
+<!-- 			SELECT * -->
+<!-- 			  FROM tb_user_info -->
+<!-- 			 ORDER BY USER_ID ASC -->
+<!-- 		) A -->
+<!-- 		]]> -->
+<!-- 		LIMIT #{start, jdbcType=NUMERIC}, #{offset, jdbcType=NUMERIC} -->
+<!-- 	</select> -->
+	
+	<insert id="insertUser" parameterType="UserVO">
+		INSERT
+		  INTO tb_user_info (
+		  	 USER_ID
+		   	,USER_NM
+		   	,USER_PW
+		   	,DEPT
+		   	,PART_DIV
+		   	,ADMIN_YN
+		   	,DEL_YN
+		   	,CREATE_DT
+		   	,MOD_DT
+		   	,CREATER
+		   	,MODIFIER
+		   	,POSITION
+		   	,POSITION_GD
+		   	,TEL
+		   	,MOBILE
+		   	,AUTH_GB
+		  )
+		VALUES (
+			 (SELECT max(T1.USER_ID) + 1 AS USER_ID FROM tb_user_info AS T1)
+			,#{user_nm}
+			,#{user_pw}
+			,#{dept}
+			,#{part_div}
+			,'N'
+			,'N'
+			,DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s')
+			,DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s')
+			,#{creater}
+			,#{modifier}
+			,#{position}
+			,#{position_gd}
+			,#{tel}
+			,#{mobile}
+			,#{auth_gb}
+		)
+	</insert>
+	
+	<update id="updateUser" parameterType="UserVO">
+		UPDATE tb_user_info
+		   SET USER_NM=#{user_nm}
+		   	  ,DEPT=#{dept}
+		   	  ,PART_DIV=#{part_div}	
+		   	  ,MOD_DT=DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s')
+		   	  ,MODIFIER=#{modifier}
+		   	  ,POSITION=#{position}
+		   	  ,POSITION_GD=#{position_gd}
+		   	  ,TEL=#{tel}
+		   	  ,MOBILE=#{mobile}
+		   	  ,AUTH_GB=#{auth_gb}
+		WHERE USER_ID=#{user_id} 
+	
+	</update>
+	
+	<delete id="deleteUser" parameterType="java.util.List">
+		DELETE
+		  FROM tb_user_info
+		 WHERE USER_ID IN
+		 <foreach collection="list" item="idx" index="index" separator="," open="(" close=")">
+		 	#{idx}
+		 </foreach>
+	</delete>
+	
+	<!-- 통계 -->
+	<select id="selectUserCount" resultType="Integer">
+		SELECT COUNT(*) AS COUNT
+		  FROM tb_user_info
+	</select>
+	
+	<select id="selectUserPartDivCount" resultType="map">
+		SELECT PART_DIV
+			  ,COUNT(*) AS COUNT
+		  FROM tb_user_info
+		 GROUP BY PART_DIV
+	</select>
+	
+	<select id="selectUserPositionGDCount" resultType="map">
+		SELECT POSITION_GD
+			  ,COUNT(*) AS COUNT
+		  FROM tb_user_info
+		 GROUP BY POSITION_GD
+	</select>
+	
+	<select id="selectUserAuthGBCount" resultType="map">
+		SELECT AUTH_GB
+			  ,COUNT(*) AS COUNT
+		  FROM tb_user_info
+		 GROUP BY AUTH_GB
+	</select>
+</mapper>

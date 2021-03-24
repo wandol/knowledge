@@ -1,0 +1,212 @@
+.modal .modal-dialog .modal-content { border-color: #454545; /*border-radius: 0;*/}
+.modal .modal-dialog .modal-header { background: #454545; /*height: 40px;*/ padding: 3px 7px 9px 15px;}
+.modal .modal-dialog .modal-header h4 { color: #fff; font-size: 14px;  font-weight: bold; }
+.modal .modal-dialog .modal-header button.close { color: #fff; text-shadow: none; opacity: 1; outline-offset: 0; box-shadow: none; outline: none;}
+.modal#layerNotice .modal-dialog .modal-body { padding: 20px 20px 20px 20px; position: relative;}
+.modal#layerNotice .modal-dialog .modal-body p { margin-left: 45px; font-size:10pt; word-break: break-all;}
+.modal#layerNotice .modal-dialog .modal-body p.center { text-align: center; margin-left: 0;}
+.modal#layerNotice .modal-dialog .modal-body .fa { font-size: 32px; position: absolute; top: 17px; left: 20px;}
+.modal#layerNotice .modal-dialog .modal-body .fa.confirm { color: #64B100;}
+.modal#layerNotice .modal-dialog .modal-body .fa.warning { color: #FFC000;}
+.modal#layerNotice .modal-dialog .modal-body .fa.info { color: #3498DB;}
+.modal#layerNotice .modal-dialog .modal-body .fa.error { color: #ff4b4b;}
+.modal#layerNotice .modal-dialog .modal-body .ml0 { margin-left: 0;}
+.modal#layerNotice .modal-dialog .modal-footer .btn-success {border-color:#757575; background-color:#999999}
+.modal#layerNotice .modal-dialog .modal-footer .btn-success:hover {background-color:#757575}
+
+.modal .modal-dialog .modal-body.summernote-layer p { margin-left: 0px; font-size:12px; line-height:13px}
+.modal .modal-dialog .modal-body.summernote-layer .fa {position: relative; top: 0; left: 0; font-size: 14px;} 
+.modal.link-dialog .modal-dialog .modal-body .form-group {margin-right:0; margin-left:0;}
+.modal.link-dialog .modal-dialog .modal-body .checkbox {display:none;}
+.modal.in .modal-dialog .modal-body .form-group {margin-right:0; margin-left:0;}
+.modal.in .modal-dialog input.form-control {padding:0;} 
+
+.modal .modal-dialog textarea.form-control {padding:6px 12px; height:32px; min-height:32px; max-height:135px; overflow-x:hidden; overflow-y:auto;}
+.modal .modal-dialog input.form-control {height:32px;}
+
+.tab_dialog {width:100%; padding:18px 0 10px 0; }
+.tab_dialog>.nav>li>a {font-size:13px; padding:5px 15px; color: #908174; border-top: 3px solid transparent;}
+.tab_dialog>.nav>li.active a { border-top: 3px solid #9d958a; color: #000;}
+	
+.form-group input { box-shadow: none;}
+.form-group .form-control[readonly] { cursor: default;}
+.form-group textarea[readonly]:focus,
+.form-group input[readonly]:focus { border-color: #ccc; }
+.form-horizontal .control-label {padding-top: 7px; margin-bottom: 0; text-align: right;}
+
+.modal .stacked-content {min-height:550px; overflow-x: hidden;}
+.modal .stacked-content .col-xs-10 .form-group {margin-left:0; margin-right:0;}
+
+.modal .modal-dialog.confirm-modal .modal-body { padding: 20px 20px 10px 20px; position: relative;}
+.modal .modal-dialog.confirm-modal .modal-body p { margin-left: 45px; font-size:10pt}
+.modal .modal-dialog.confirm-modal .modal-body p.center { text-align: center; margin-left: 0;}
+.modal .modal-dialog.confirm-modal .modal-body .fa { font-size: 32px; position: absolute; top: 17px; left: 20px;}
+.modal .modal-dialog.confirm-modal .modal-body .fa.confirm { color: #64B100;}
+.modal .modal-dialog.confirm-modal .modal-body .ml0 { margin-left: 0;}
+.modal .modal-dialog.confirm-modal .modal-body .layer_message span {width:100%; vertical-align:middle; font-weight:normal;}
+.modal .modal-dialog.confirm-modal .modal-body .layer_message span input[type=radio] {margin-top:0; vertical-align:middle; margin-right:5px;}
+.modal .modal-dialog.confirm-modal .modal-body .layer_message span label {font-weight:normal;}
+.modal .modal-dialog.confirm-modal .modal-footer .btn-success {border-color:#757575; background-color:#999999}
+.modal .modal-dialog.confirm-modal .modal-footer .btn-success:hover {background-color:#757575}
+.modal .modal-dialog .modal-body .domain {margin-top: 15px;}
+
+.modal#slideLayer {position:absolute!important; overflow:auto;}
+.modal#slideLayer .modal-dialog {min-width:996px;  margin: 50px auto;}
+.modal#slideLayer .modal-dialog.active {right:0;}
+.modal#slideLayer .modal-body {min-width:100%;}
+.modal#slideLayer .tab-content {padding: 20px; background: #fff; border-left: 1px solid #d4d1cc; z-index:1; min-height:calc(100vh - 186px);}
+.modal#slideLayer .label-require {display:block; text-align: right; padding-right: 36px;}
+
+.modal .control-goto .goto-text, .modal .button-goto .goto-text {width: 100%; height: 32px; cursor: pointer; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;} 
+.modal .control-goto .goto-edit, .modal .button-goto .goto-edit {width: 100%; height: 32px;} 
+.modal .control-goto .goto-scenario, .modal .button-goto .goto-scenario {width: 49%!important; float: left;}
+.modal .control-goto .goto-action, .modal .button-goto .goto-action {width: 49%!important; float: right;}
+
+/* add-intent */
+#add-intent {width:800px;}
+#addintent .ui-autocomplete {max-height: 360px; overflow-x:hidden; overflow-y:auto;}
+#addintent .ui-menu-item {font-size:12px;}
+#addintent .ui-menu-item-wrapper {padding:5px 10px; border: 0;}
+#addintent .ui-state-active {border: 0; background: #c4e2ff; color: #333; margin:0;}
+
+#addintent .questionarea {max-height:50px; padding-left:15px; padding-right:15px;}
+#addintent .questionarea .btn {font-size: 14px; font-weight: normal; line-height: 1.35; color: #fff; text-align: center; background-color: #b1a799; border: 1px solid #b1a799;}
+#addintent .questionarea .btn:hover, #addintent .questionarea .btn:focus {background-color: #9d958a; border-color: #9d958a;}
+#addintent .rolearea {max-height:50px; padding-left:15px; padding-right:15px;}
+#addintent .rolearea .btn {font-size: 14px; font-weight: normal; line-height: 1.35; color: #fff; text-align: center; background-color: #b1a799; border: 1px solid #b1a799; height: 32px; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; padding: 6px 13px!important;}
+#addintent .rolearea .btn:hover, #addintent .rolearea .btn:focus {background-color: #9d958a; border-color: #9d958a;}
+#addintent .rolearea .btn > i {font-size: 20px;}
+#addintent .patharea {padding-right:0}
+#addintent .radioarea {margin-top:4px}
+#addintent input[type=radio] {vertical-align:middle; margin: 0 2px 0 5px;}
+#addintent input[type=radio]:first-child {margin-left: 0;}
+
+#addintent .note-editor.has-error {border-color: #a94442; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);}
+#addintent button.note-btn.btn-sm {color:#333; border-color:#ccc;}
+
+#addintent .bodytype2 .scenario-select {line-height:30px; vertical-align:middle; margin-bottom:5px}
+#addintent .bodytype2 .scenario-select label {width:100%; }
+#addintent .bodytype2 .scenario-select div {width:100%; }
+
+@media (min-width:770px) {
+	#addintent .bodytype2 .scenario-select label {display:inline-block; width:15%; margin-right:15px; vertical-align:top; padding-top:0}
+	#addintent .bodytype2 .scenario-select div {display:inline-block; width:80%; }
+}
+
+#add-intent label.control-label.col-xs-2 {width:13%; padding-right: 5px;}
+
+#add-pattern #patterns {max-height: 300px; overflow-y: auto;}
+.patterns .form-group {margin: 0 0 5px 0;}
+.patterns .form-group:last-child {margin-bottom:0}
+.patterns .pattern {float: left; position: relative;  min-height: 1px; padding:5px 10px; width:94%;}
+.patterns .btn-set {float: right;margin-top: 3px;}
+
+#tab_voca .table .result-box {width:100%; height:87%;}
+#tab_voca .table tr td input { margin-top: 3px; margin-bottom: 3px; border: 1px solid #ccc; }
+
+#add-intent .btn-pattern-false {width: 18px; height:18px; padding: 0; background: transparent url(../img/icon/add.png) no-repeat center top;}
+#add-intent .btn-pattern-false:hover, .btn-pattern-false.btn-hover {background-image: url(../img/icon/add_hover.png);}
+#add-intent .btn-pattern-true {width: 18px; height:18px; padding: 0; background: transparent url(../img/icon/edit.png) no-repeat center top;}
+#add-intent .btn-pattern-true:hover, .btn-pattern-true.btn-hover {background-image: url(../img/icon/edit_hover.png);}
+
+#action-nav {position:fixed; padding:0;}
+#action-nav ul {background: #f7f7f7; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-color: #d4d1cc; border-style: solid; border-width: 1px 0 1px 1px; position: absolute; width: 160px;}
+#action-nav li a {margin-right:0;}
+
+/* add-users */
+#adduser .rolearea {max-height:50px; padding-left:15px; padding-right:15px;}
+#adduser .rolearea .modal-footer .btn {font-size: 14px; font-weight: normal; line-height: 1.35; color: #fff; text-align: center; background-color: #b1a799; border: 1px solid #b1a799; height: 32px; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; padding: 6px 13px!important;}
+#adduser .rolearea .modal-footer .btn:hover, #adduser .rolearea .modal-footer .btn:focus {background-color: #9d958a; border-color: #9d958a;}
+#adduser .rolearea .modal-footer .btn > i {font-size: 20px;}
+
+
+#addrole .rolearea {max-height:50px; padding-left:15px;}
+#addrole .rolearea .btn {font-size: 14px; font-weight: normal; line-height: 1.35; color: #fff; text-align: center; background-color: #b1a799; border: 1px solid #b1a799; height: 32px; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; padding: 6px 13px!important;}
+#addrole .rolearea .btn:hover, #addintent .rolearea .btn:focus {background-color: #9d958a; border-color: #9d958a;}
+#addrole .rolearea .btn > i {font-size: 20px;}
+
+/* edit action& scenario */
+#edit-scenario {width:950px;}
+#edit-scenario .variables-info {padding: 20px;}
+#edit-scenario .variables-info .col-xs-3,
+#edit-scenario .variables-info .col-xs-6,
+#edit-scenario .variables-info .col-xs-2 {padding-left:0}
+#edit-scenario .variables-info .col-xs-1 {padding-left:0; padding-right:0}
+#edit-scenario .variables-info .col-xs-1 .btn {vertical-align:top; margin-top:1px}
+#edit-scenario .variables-info .col-xs-2 select {border-color: #ccc; text-align:center; padding:4px;}
+#edit-scenario .variable:last-child  {margin-bottom: 0;}
+#edit-scenario .parameter-wrap label.control-label.col-xs-2 {width:12%}
+#edit-scenario .parameter-wrap div.control-div col-xs-10 {width:87%}
+
+#edit-action #tab_action .tab-pane{border-top:0; padding-top:0; margin-top:0;}
+#edit-action .context {margin-left:10px; margin-right:10px;}
+#edit-action #tab_initial .initial-wrap {padding:0; background:#fff; border:0; }
+#edit-action #tab_initial .initial-wrap .init-waiting {font-weight:normal; vertical-align: middle; cursor:pointer;}
+#edit-action #tab_conditions .if-wrap {margin-bottom: 15px}
+#edit-action #tab_conditions .if-wrap:last-child {margin-bottom:0}
+#edit-action .output-value {margin-left:0; margin-right:0;}
+#edit-action .output-value:last-child, #edit-action .context:last-child {margin-bottom: 0;}
+#edit-action .radioarea {margin-top:3px}
+#edit-action input[type=radio] {vertical-align:middle; margin-right:2px; margin-top:0;}
+#edit-action #tab_name label.control-label.col-xs-1, #edit-action #tab_initial label.control-label.col-xs-1 {width:8%}
+#edit-action #tab_name label.control-label.col-xs-2 {width:12%}
+#edit-action #tab_initial label.control-label.col-xs-2 {width:11%}
+#edit-action .context-wrap .col-xs-6,
+	#edit-action .context-wrap .col-xs-2 {padding-left:0}
+#edit-action .context-wrap .col-xs-1 {padding-left:0; padding-right:0}
+#edit-action .col-xs-2 select {padding:4px}
+#edit-action .dotted-top-border { padding-top: 20px; margin-top: 20px; border-top: 2px dotted #d4d1cc;}
+#edit-action .if-wrap .btn-vertical-wrap {top: -10px; right: -10px; float: left;}
+#edit-action .if-wrap #remove_condition {padding: 0; margin:0; border: 1px dashed; border-radius: 10px; width: auto;}
+#edit-action #add_condition {width:100%; font-weight:bold;}
+#edit-action #tab_conditions label.control-label.col-xs-2 {width:12%}
+#edit-action #tab_conditions div.control-div col-xs-10 {width:87%}
+
+.scenario-edit .param1 {float: left; position: relative;  min-height: 1px; padding:0 5px 0 0; width:25%;}
+.scenario-edit .param2 {float: left; position: relative;  min-height: 1px; padding:0 5px 0 0; width:66%;}
+.scenario-edit .btn-set {position: absolute; float: right; display: inline;  width: 9%; text-align:right; padding:0;}
+
+.scenario-edit .form-group .control-label {width:110px; position: relative; float: left; min-height: 1px; padding-right: 5px; padding-left: 5px;}
+
+.scenario-edit .tab-form-wrap { padding: 20px 0;}
+
+.scenario-edit #add_parameter {width:100%; font-weight:bold;}
+.scenario-edit .parameter-wrap {margin-bottom: 15px; padding: 10px 45px 0 20px; cursor:move;}
+.scenario-edit .parameter-wrap:last-child {margin-bottom:0}
+.scenario-edit .parameter-wrap #remove_parameter {padding: 0; margin:0; border: 1px dashed; border-radius: 10px; width: auto;}
+.scenario-edit .parameter-wrap .form-group {margin-bottom:10px;}
+.scenario-edit .parameter-wrap .form-group.optional {display:hidden;}
+.scenario-edit .parameter-wrap .form-group .control-label {width:50px; margin-bottom: 0; text-align: right; display:inline;}
+.scenario-edit .parameter-wrap .form-group .control-form {width:calc(100% - 50px); padding-right:5px; padding-left:15px; display:inline-block;}
+.scenario-edit .parameter-wrap .form-group .col-xs-4 {margin-left:0; margin-right:0; padding-left:0; padding-right:0; }
+.scenario-edit .parameter-wrap .form-group.retrymessage {margin-top:-2px;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group {margin-bottom: 0;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group-item {padding:0; border: 1px #ccc; border-style:dashed solid;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group-item:first-child {border-top-style: solid;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group-item:last-child {border-bottom-style: solid;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group-item input[type=text] {border:0; width:89%; display:inline-block; background: transparent;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group-item .btn-set {margin-top:3px;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group-item .btn-set button {display:inline-block; padding:0 3px; border-radius:5px; border:0; color:#b1a799;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .list-group-item:first-child .btn-set button.btn-minus {display:none;}
+
+.scenario-edit .parameter-wrap .form-group.retrymessage .param-retry-count {width:100%; text-align:right; margin-top:4px;}
+.scenario-edit .parameter-wrap .form-group.retrymessage .param-retry-count label {font-weight:normal; margin-right:4px; }
+.scenario-edit .parameter-wrap .form-group.retrymessage .param-retry-count select {padding:4px 12px; width:126px; height:26px;vertical-align:middle; border:1px solid #ccc; align-items: flex-end;}
+
+.scenario-edit .parameter-wrap .btn-bottom-wrap {position:absolute; top:58px; right:20px; }
+.scenario-edit#edit-action .parameter-wrap .btn-bottom-wrap {right:10px;}
+.scenario-edit .parameter-wrap .btn-vertical-wrap {top: -10px; right: -10px; float: left;}
+
+.scenario-edit .parameter-wrap .form-group select.form-control {padding-left:6px;}
+
+.scenario-edit .parameter-wrap .form-group .col-xs-4.param-item {width:28%}
+.scenario-edit .parameter-wrap .form-group .col-xs-4.param-item.param-checkbox {width:16%}
+.scenario-edit .parameter-wrap .form-group .col-xs-4.param-item.param-checkbox .control-label {width:80px;}
+.scenario-edit .parameter-wrap .form-group .col-xs-4.param-item.param-checkbox input[type=checkbox] {margin-top:10px;}
+
+#roles-edit {margin:50px 0;}
+#roles-edit .modal-content {margin:250px 200px;}
+#roles-edit .control-label {padding-right:0;}
+#roles-edit .rolearea {margin-bottom:10px; padding-left:15px; padding-right: 15px; float: left;}
+#roles-edit .rolearea .btn {font-size: 14px; font-weight: normal; line-height: 1.35; color: #fff; text-align: center; background-color: #b1a799;border: 1px solid #b1a799; border-top-left-radius: 0; border-bottom-left-radius: 0; vertical-align: top;}
+#roles-edit .rolearea .multiSelectOptions {width: calc(100% - 30px)!important; max-height: 274px!important;}
