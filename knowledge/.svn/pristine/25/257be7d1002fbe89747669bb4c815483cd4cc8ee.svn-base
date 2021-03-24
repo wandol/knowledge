@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+#extr-page #main {padding-top: 100px;}
+#extr-page .hero {background: none;}
+label.error {color: #a90329;}
+#extr-page .row {max-width: 800px;margin: auto;}
+
+/* header notice */
+.ajax-notifications .alert-transparent {text-align: center;}
+
+/* left menu */
+.login-info a {margin-top: 8px;}
+.login-info .fa-user{margin-right: 5px;font-size: 17px;}
+.login-info>span {padding: 0px 13px;}
+
+/* left mini menu */
+.minified .login-info .fa-user {display: inline-block;}
+.minified .login-info span {padding: 3px 10px;border-bottom: none;}
+
+/* body(smart-rtl) */
+.smart-rtl .login-info .fa-user{margin-right: 0;margin-left: 5px;}
+
+/* jqgrid */
+.ui-jqgrid .ui-jqgrid-htable th div {text-align: center;}

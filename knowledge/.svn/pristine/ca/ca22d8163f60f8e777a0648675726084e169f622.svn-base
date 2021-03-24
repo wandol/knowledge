@@ -1,0 +1,479 @@
+
+
+
+
+
+	
+	
+<!DOCTYPE html>	
+<html lang="ko">	
+	<head>	
+		<meta charset="utf-8">	
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<title>전문가 지식 시스템</title>	
+		
+		<!-- fontawesome -->
+<!-- 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> -->
+		<link type="text/css" href="css/font-awesome/all.css" rel="stylesheet">
+		
+		<!-- jquery -->
+		<script type="text/javascript" src="js/jquery/jquery-1.11.0.js"></script><!-- jQuery -->	
+		<script type="text/javascript" src="js/jquery/jquery-ui.js"></script><!--jQuery UI -->	
+		<script type="text/javascript" src="js/jquery/jquery.cookie.js"></script><!-- Cookie -->	
+		<script type="text/javascript" src="js/jquery/jquery.fancytree.js"></script><!-- Fancy Tree -->	
+		<script type="text/javascript" src="js/jquery/jquery.deserialize.min.js"></script><!-- Form deserialization -->	
+		<script type="text/javascript" src="js/jquery/jquery.pagination.js"></script><!-- Pagination -->	
+		<script type="text/javascript" src="js/jquery/jquery.justified.js"></script><!-- Image gallery -->	
+		<link type="text/css" href="css/jquery-ui.css" rel="stylesheet"><!-- jQuery UI -->	
+		
+		<!-- bootstrap -->
+		<script type="text/javascript" src="js/bootstrap.js"></script><!--Bootstrap	 -->
+		<script type="text/javascript" src="js/bootstrap-datepicker.js"></script><!-- KSF localization -->
+		<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+		<link type="text/css" href="css/bootstrap-datepicker.css" rel="stylesheet">
+		
+		<!-- konan -->
+		<script type="text/javascript" src="js/jquery/jquery.konan.sf.js"></script>
+		<script type="text/javascript" src="js/jquery/i18n/jquery.konan.sf-ko.js"></script>
+		<script type="text/javascript" src="js/jquery/i18n/jquery.ui.datepicker-ko.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery.inputmask.bundle.js"></script>	
+		<script type="text/javascript" src="js/search-ui.js"></script>
+		<script type="text/javascript" src="js/common/message.js"></script>
+		<script type="text/javascript" src="js/common/drawDavif.js"></script>	
+		<script type="text/javascript" src="js/common/upload2.js"></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/problemFoucs2.js"></script>
+		<script type="text/javascript" src="js/search.ksf2.js"></script>
+		<script type="text/javascript" src="js/KDaViF.js"></script>
+		<link type="text/css" href="css/default.css" rel="stylesheet">
+		<link type="text/css" href="css/konan.sf.css" rel="stylesheet">
+		<link type="text/css" href="css/konan2.css" rel="stylesheet">
+		
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="css/tmpl/css.css">
+		
+			
+		<!-- JS -->	
+		<script>
+		$(document).ready(function(){
+// 		  $('[data-toggle="tooltip"]').tooltip();   
+
+		
+			$("#pfSymptomChart").visualization({
+				data: "id,name,value\nid1,경기도 교육청,76\nid2,논란,36\nid3,경제,23\nid4,글로벌,12,1,경기도 교육청1,76\nid2,논란1,36\nid3,경제1,23\nid4,글로벌1,12",
+				 type: 'bar',
+				 dataType : 'csv',
+			   barWidth : 15,
+			   tooltip: {
+					enabled:true,
+					suffix : "건"
+			   },
+			   fontSize : 10,
+			   tickPoint : 0,
+			   tickSuffix : "건",
+			   tickX : 10,
+			   tickY : -5,
+			   width : 800,
+			   height :300,
+			   margin : {top: 20, right: 20, bottom: 30, left: 50}
+			});
+		});
+		</script>
+	</head>	
+	<body>	
+		<!-- wrap start -->
+		<div id="wrap">
+			<!-- history -->
+			
+
+<form id="historyForm" action="search2.do" method="get">	
+	<input type="hidden" id="his_category" name="category" value="pf"/>	
+	<input type="hidden" id="his_kwd" name="kwd" value=""/>		
+	<input type="hidden" id="date" name="date" value=""/>	
+	<input type="hidden" id="his_startDate" name="startDate" value=""/>	
+	<input type="hidden" id="his_endDate" name="endDate" value=""/>		
+	<input type="hidden" id="pageNum" name="pageNum" value="1"/>	
+	<input type="hidden" id="sort" name="sort" value="r"/>	
+
+
+	
+	<input type="hidden" id="his_powerComp" name="powerComp" value="all"/>	
+	<input type="hidden" id="his_powerSt" name="powerSt" value="all"/>	
+	<input type="hidden" id="his_stNo" name="stNo" value="all"/>	
+	<input type="hidden" id="his_powerType" name="powerType" value="all"/>	
+	<input type="hidden" id="his_repoKind" name="repoKind" value="all"/>	
+	
+	<!-- 결과내 재검색 추가 -->
+	<input type="hidden" id="his_resrch" name="reSrchFlag" value="false"/>
+	<input type="hidden" id="hstr_preKwds" name="preKwds" value=""/>
+	<!-- 결과내 재검색 추가 -->
+	
+	<!-- 가중치 추가 -->
+	<input type="hidden" id="his_weight" name="weight" value="all"/>
+	<!-- 가중치 추가 -->
+	
+	<input type="hidden" id="his_pfKwd" name="pfKwd" value="마모 계획 보일러 사례"/>
+	<input type="hidden" id="his_partName" name="partName" value="all"/>
+	<input type="hidden" id="his_partMid" name="partMid" value="all"/>
+	<input type="hidden" id="his_symptomKwd" name="symptomKwd" value="all"/>
+	<input type="hidden" id="his_actionKwd" name="actionKwd" value="all"/>
+	<input type="hidden" id="his_startPublishYm" name="startPublishYm" value=""/>
+	<input type="hidden" id="his_endPublishYm" name="endPublishYm" value=""/>
+	
+									
+</form>
+			
+			<!-- header start-->
+			
+<!-- header start -->
+<header id="header">
+
+	<!-- logo start -->
+	<h1 class="KEPRI-logo"><a href="search2.do"><img src="images/tmpl/logo.png" alt="KEPRI"></a><span>전문가지식시스템</span></h1>
+	<!-- logo end -->
+
+	<!-- top menu start-->
+	<div class="top-menu-wrap">
+	
+		<ul class="top-menu-list">
+			<li><a href="#"><i class="fas fa-bolt"></i>&nbsp;기술지원보고서</a></li>
+			<li><a href="#"><i class="fas fa-bolt"></i>&nbsp;정비보고서</a></li>
+			<li><a href="#"><i class="fas fa-bolt"></i>&nbsp;지식자료</a></li>
+			<li><a href="#"><i class="fas fa-bolt"></i>&nbsp;기술발간자료</a></li>
+			<li><a href="#"><i class="fas fa-bolt"></i>&nbsp;해외동향</a></li>
+			<li><a href="#"><i class="fas fa-bolt"></i>&nbsp;발전설비</a></li>
+		</ul>
+		<div class="floatRight">
+			<form role="search" id="searchForm" method="get" action="search2.do" >
+				<div class="user-info-wrap">
+					<ul>
+						<li>
+							<input type="text" class="size90p" id="kwd" name="kwd" value="" />
+						</li>
+					</ul>
+				</div>
+				<div class="lang-info-wrap">
+					<button type="button" id="topSearchBtn" class="basic-btn btn-color3" onclick="javascript:srchKwd();">검색</button>
+					<button type="button" id="problemFocusBtn" class="basic-btn btn-color3" onclick="javascript:goPf();">PF</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- top menu end-->
+
+</header>
+<!-- header end -->
+			<!-- hader end-->
+			
+			<!-- container start -->
+			<div id="container">
+				
+				<!-- leftside start-->
+				
+<!-- left menu start -->
+<div class="left-menu-wrap">
+	<div class="left-menu" id="toggle">
+		<h2 class="leftMenuTitle"><strong>카테고리</strong></h2>
+		<ul class="leftMenuList">
+			<li><strong class="leftMenuMainCategory"><a href="#"><i class=""></i>보일러()</a></strong>
+				<ul class="leftMenuSubCategory">
+					<li><a href="#" data-toggle="tooltip" title="Hooray!">정밀진단</a></li>
+					<li><a href="#">고장진단</a></li>
+				</ul>
+			</li>
+			<li><strong class="leftMenuMainCategory"><a href="#"><i class=""></i>터빈()</a></strong>
+				<ul class="leftMenuSubCategory">
+					<li><a href="#">가스터빈</a></li>
+					<li><a href="#">증기터빈</a></li>
+				</ul>
+			</li>
+			<li><strong class="leftMenuMainCategory"><a href="#"><i class=""></i>발전기</a></strong>
+				<ul class="leftMenuSubCategory">
+					<li><a href="#">예방진단</a></li>
+					<li><a href="#">절연진단</a></li>
+					<li><a href="#">누설/흡습 진단</a></li>
+				</ul>
+			</li>
+			<li><strong class="leftMenuMainCategory"><a href="#"><i class=""></i>성능</a></strong>
+				<ul class="leftMenuSubCategory">
+					<li><a href="#">계획예방정비</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="search-btn-wrap">
+			<button type="button" id="chatbot" class="basic-btn btn-color1">챗봇 서비스</button>
+			<button type="button" id="reportUpload" class="basic-btn btn-color1">보고서 업로드</button>
+			<button type="button" id="proAnalysis" class="basic-btn btn-color1" onclick="javascript:goPfAnalysis();">Problem Focus 분석</button>
+		</div>
+	</div>
+</div>
+<!-- left menu end -->
+
+<!-- #uploadDialog -->
+<div id="uploadDialog">
+	<form method="POST" enctype="multipart/form-data" id="uploadDialogForm">
+		<div class="row">
+			<div class="col-sm-2">
+				<label>보고서명</label>
+			</div>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="upLoadReportName" name="upLoadReportName">
+			</div>
+		</div>
+	
+		<hr>
+		
+		<div class="row">
+			<div class="col-sm-2">
+				<label>발전사</label>
+			</div>
+			<div class="col-sm-4">
+				<select class="size100p" id="upLoadPowerComp" name="upLoadPowerComp">
+					<option value="">전체</option>
+				</select>
+			</div>
+			<div class="col-sm-2">
+				<label>사업소</label>
+			</div>
+			<div class="col-sm-4">
+				<select class="size100p" id="upLoadPowerSt" name="upLoadPowerSt">
+					<option value="">전체</option>
+				</select>
+			</div>
+		</div>
+	
+		<hr>
+		
+		<div class="row">
+			<div class="col-sm-2">
+				<label>호기</label>
+			</div>
+			<div class="col-sm-4">
+				<select class="size100p" id="upLoadStNo" name="upLoadStNo">
+					<option value="">전체</option>
+				</select>
+			</div>
+			<div class="col-sm-2">
+				<label>분야</label>
+			</div>
+			<div class="col-sm-4">			
+				<select class="size100p" id="upLoadPowerType" name="upLoadPowerType">
+					<option value="">전체</option>
+			  		<option value="boiler">보일러</option>			  	
+				  	<option value="gas">가스터빈</option>
+				  	<option value="steam">증기터빈</option>
+				  	<option value="generator">발전기</option>
+				</select>
+			</div>
+		</div>
+	
+		<hr>
+	
+		<div class="row">
+			<div class="col-sm-2">
+				<label>출판년도</label>
+			</div>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="upLoadPublishYM" name="upLoadPublishYM">
+			</div>
+			<div class="col-sm-2">
+				<label>보고서<br>종류</label>
+			</div>
+			<div class="col-sm-3" style="display: inline-flex;">
+				<input type="checkbox" id="upLoadPrecision" name="upLoadRepoKind" value="정밀진단">
+				<label for="upLoadPrecision">정밀진단</label>
+				&nbsp;
+				<input type="checkbox" id="upLoadFault" name="upLoadRepoKind" value="고장진단">
+				<label for="upLoadFault">고장진단</label>
+			</div>
+		</div>
+	
+		<hr>
+	
+		<div class="row">
+			<div class="col-sm-2">
+				<label>첨부파일</label>
+			</div>
+			<div class="col-sm-10">
+				<input type="hidden" class="btn btn-default" id="file-name" name="file-name">
+				<input type="file" class="btn btn-default" id="file" name="file">
+			</div>
+		</div>
+	</form>
+</div>
+<!-- #uploadDialog -->
+				<!-- leftside end-->
+				
+				<!-- content start -->
+				<div class="content-container">
+	
+					<div class="content-wrap">
+					
+						<!-- title start -->
+					<div class="content-title-wrap">
+						<h1 class="contentMainTitle"><strong>Problem Focus</strong> 분석</h1>
+						<p class="contentTitleRoute"><a href="#"><img src="images/tmpl/ico_home.png" alt="home" /></a>&nbsp; &gt; <a href="#">Problem Focus 분석</a></p>
+					</div>
+					<!-- title wnd -->
+					
+					<!-- content start -->
+					<div class="content">
+						
+						<!-- search start -->
+						<div class="content-search-wrap">
+						<h2 class="contentTitle">검색 옵션</h2>
+							<ul>
+								<!-- 1floor -->
+								<li class="mt30 searchLi33">
+									<label class="searchTitle searchLabel100">ㆍ발전사 :</label>
+									<select class="size50p" id="powerComp" name="powerComp">
+										<option value="all">전체</option>
+									</select>
+								</li>
+								<li class="mt30 searchLi33">
+									<label class="searchTitle searchLabel100">ㆍ사업소 :</label>
+									<select class="size50p" id="powerSt" name="powerSt">
+										<option value="all">전체</option>
+									</select>
+								</li>
+								<li class="mt30 searchLi33">
+									<label class="searchTitle searchLabel100">ㆍ호기 :</label>
+									<select class="size50p" id="stNo" name="stNo">
+										<option value="all">전체</option>
+									</select>
+								</li>
+								<li class="mt30 searchLi33">
+									<label class="searchTitle searchLabel100">ㆍ분야 :</label>
+									<select class="size50p" id="powerType" name="powerType">
+										<option value="all">전체</option>
+									  	<option>보일러</option>									  	
+									  	<option>가스터빈</option>
+									  	<option>증기터빈</option>
+									  	<option>발전기</option>
+									</select>
+								</li>
+								<!-- 1floor -->
+								
+								<!-- 2floor -->
+								<li class="mt30 searchLi33">
+									<label class="searchTitle searchLabel100">ㆍ진단부위 :</label>
+									<select class="size50p" id="partName" name="partName" onchange="javascript:pfAnalysis(this.value);">
+										<option value="">전체</option>										
+										<option >economizer</option>
+										<option >furnace wall tube</option>
+										<option >evaporator</option>
+										<option >기타</option>
+										<option >reheater</option>
+										<option >final superheater</option>
+										<option >platen superheater</option>
+										<option >primary reheater</option>
+										<option >primary superheater</option>
+									</select>
+								</li>
+								<!-- 2floor -->
+								
+								<!-- 3floor -->
+<!-- 								<li class="mt30 searchLi100"> -->
+<!-- 									<label class="searchTitle searchLabel100">ㆍ시험일시 :</label> -->
+
+<!-- 									<span>~</span> -->
+
+<!-- 								</li> -->
+								<!-- 3floor -->								
+							</ul>
+<!-- 							<div class="search-btn-wrap"> -->
+<!-- 								<button type="button" id="pfSearchBtn" class="basic-btn btn-color1" onclick="javascript:pfSearch();">Problem Focus 검색</button> -->
+<!-- 							</div> -->
+						</div>
+						<!-- search end -->
+						
+						<!-- content1 start -->
+						<div id="analyBarchart" class="content-box-wrap" style="display: block !important">
+							<h2 class="contentTitle">차트1</h2>
+							<span class="pfTitle"></span>
+							<div class="chartDiv">
+								<div id="pfSymptomChart"></div>				
+							</div>			
+						</div>
+						<!-- content1 end -->
+						
+						<!-- content1 start -->
+						<div id="analyCloudchart" class="content-box-wrap">
+							<h2 class="contentTitle">차트2</h2>
+							<span class="pfTitle"></span>
+							<div class="chartDiv">
+								<div id="pfActionChart"></div>	
+							</div>				
+						</div>
+						<!-- content1 end -->
+						
+						<!-- content1 start -->
+						<div id="analyLinePiechart" class="content-box-wrap">
+							<h2 class="contentTitle">차트3</h2>
+							<span class="pfTitle"></span>
+							<div class="chartDiv">
+								<div id="pfPublishYMChart" style="display: flex;">
+									<div id="pfPublishYMLine" class="lineChart"></div>
+									<div id="pfPublishYMPie" class="pieChart"></div>
+								</div>
+								<div id="pfPublishYMBtm">
+									<ul id="pfDataNameList" class="chart-legend legend2 clearfix buzz-legend"></ul>
+								</div>			
+							</div>			
+						</div>
+						<!-- content1 end -->
+						
+					</div>
+					<!-- content end -->
+						
+					</div>
+					
+					
+<!-- #commonDialog -->
+<div id="messageDialog" title="Dialog Simple Title">
+</div>
+<!-- #commonDialog -->
+				</div>
+				<!-- content end-->
+				
+<!-- 				rightside start -->
+				
+<!-- right menu start -->
+<div class="right-menu-wrap">
+	<div class="right-menu" id="toggle">
+		<h2 class="rightMenuTitle"><strong>인기검색어</strong></h2>
+		<ul class="rightMenuList">
+			<li>
+				<div id="rankings" class="box-content"></div>
+			</li>
+		</ul>
+		<h2 class="rightMenuTitle"><strong>최근 검색어</strong></h2>
+		<ul class="rightMenuList">
+			<li>
+				<div id="recent" class="box-content"></div>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- right menu end -->
+<!-- 				rightside end -->
+				
+			</div>
+			<!-- container end -->
+			
+			<!-- footer start-->
+			
+
+<footer>
+	<div class="container">	
+	<p>Copyright(c) 2016. Konan Technology Inc. All rights reserved.</p>
+		
+	</div>
+</footer>
+			<!-- footer end-->
+			
+		</div>
+		<!-- wrap end -->
+	</body>	
+</html>

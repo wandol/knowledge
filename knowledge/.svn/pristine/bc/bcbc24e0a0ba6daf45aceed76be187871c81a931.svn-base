@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- main layout -->
+	<definition name="main-layout" template="/WEB-INF/jsp/main.jsp">
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+		<put-attribute name="left" value="/WEB-INF/jsp/common/leftSide.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+	</definition>
+	
+	<!-- login layout -->
+	<definition name="login-layout" template="/WEB-INF/jsp/loginLayout.jsp">
+		<put-attribute name="header" value="" />
+		<put-attribute name="left" value="" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	
+	<!-- login 관련 -->
+	<definition name="login/*" extends="login-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/login/{1}.jsp" />
+	</definition>
+
+	<!-- 대시보드 관련 -->
+	<definition name="dashboard/*" extends="main-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/dashboard/{1}.jsp" />
+	</definition>
+	
+	<!-- 지식관리 관련 -->
+	<definition name="admin/*/*" extends="main-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/{1}/{2}.jsp" />
+	</definition>
+
+	<!-- Search 관련 -->
+	<definition name="search/*" extends="main-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/search/{1}.jsp" />
+	</definition>
+	
+	<!-- Problem Focus 관련 -->
+	<definition name="problemFocus/*/*" extends="main-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/problemFocus/{1}/{2}.jsp" />
+	</definition>
+	
+	<!-- 텍스트분석 가시화 관련 -->
+	<definition name="visualize/*" extends="main-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/visualize/{1}.jsp" />
+	</definition>
+	
+	<!-- 발전문서 관련 -->
+	<definition name="document/*" extends="main-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/document/{1}.jsp" />
+	</definition>
+	
+	<!-- ERROR 관련 -->
+	<definition name="error/*" extends="main-layout">
+		<put-attribute name="body" value="/WEB-INF/jsp/common/error/{1}.jsp" />
+	</definition>
+	
+</tiles-definitions>
+

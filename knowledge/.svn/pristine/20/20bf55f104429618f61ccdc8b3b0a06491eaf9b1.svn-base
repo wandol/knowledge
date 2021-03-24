@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd"> -->
+ 
+<mapper namespace="LogMapper">
+
+	<!-- 파일 다운로드 Log -->
+	<insert id="insertDownloadHistory" parameterType="LogVO">
+		INSERT
+		  INTO tb_gen_using_file_log(
+		  	DOWNLOAD_TM,
+		  	USER_ID,
+		  	USER_NM,
+		  	FILE_IDX,
+		  	FILE_NM,
+		  	FILE_SIZE,
+		  	DOWN_PAGE,
+		  	USER_IP,
+		  	USER_BROWER,
+		  	USER_OS
+		  )
+		VALUES(
+			DATE_FORMAT(NOW(), '%Y%m%d%H%i%s'),
+			#{user_id},
+			#{user_nm},
+			#{file_idx},
+			#{file_nm},
+			#{file_size},
+			#{down_page},
+			#{user_ip},
+			#{user_browser},
+			#{user_os}
+		)
+	</insert>
+	
+	<!-- 최근 지식 Log -->
+	<insert id="insertRecentHistory" parameterType="RecentVO">
+		INSERT
+		  INTO tb_recent_knowledge_history (
+		    REPO_KEY,
+		    GUBUN_NO,
+		    REPO_FILE_NM,
+		    USER_ID,
+		    CATEGORY,
+		    REG_DT,
+		    UDT_DT
+		  )
+		 VALUES (
+		 	#{repo_key},
+		 	#{gubun_no},
+		 	#{repo_file_nm},
+		 	#{user_id},
+		 	#{category},
+		 	now(),
+		 	now()
+		 )
+	</insert>
+</mapper>

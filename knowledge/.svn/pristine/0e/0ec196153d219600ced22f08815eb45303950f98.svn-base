@@ -1,0 +1,7 @@
+body {font-family: "맑은 고딕", "돋움", "Malgun Gothic", dotum, arial, sans-serif; margin:0; padding:0; background-color: #cabeaf;}
+.container {width: 600px; height:240px; left:calc(50% - 300px); position:absolute; min-width:0px; padding:0px; margin-top:60px;}
+#msg-box {border: #eee 3px dashed; border-radius: 3px; background-color: rgba(232, 232, 232, 0.4); height: 200px; margin-top: 10px; padding-top: 20px;}
+.footer{background: #cabeaf; margin-top: 340px; float: left; position: relative;}
+.footer .container {background: #cabeaf; padding:0px;  height:30px; position:absolute;}
+#msg-box .btn-primary {background-color: #b1a799; border-color: #b1a799; color: white; float: right; padding-right: 50p; margin-right: 10px;}
+#msg-box .btn-primary:hover, #msg-box .btn-primary:focus { background-color: #9d958a; border-color: #9d958a;}	

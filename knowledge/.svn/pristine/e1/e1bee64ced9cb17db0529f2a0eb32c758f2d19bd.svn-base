@@ -1,0 +1,18 @@
+.row .form-group .manage-label {margin-left:10px;}
+.row .form-group .manage-input {margin-bottom:10px;}
+.row .form-group .manage-checkbox {height:14px !important; width:14px; margin-top:8px;}
+.row .form-group .manage-input.input-group {float:left; padding-left:15px; padding-right:15px;}
+.row .form-group .manage-select {margin-bottom:10px; padding-right: 15px; float: left;}
+.row .form-group .manage-input .btn, .row .form-group .manage-select .btn {font-size: 14px; font-weight: normal; line-height: 1.35; color: #fff; text-align: center; background-color: #b1a799;border: 1px solid #b1a799; border-top-left-radius: 0; border-bottom-left-radius: 0; vertical-align: top;}
+.row .form-group .manage-select .input-group-btn {vertical-align: top;}
+.row .form-group .manage-select .multiSelectOptions  {width: calc(100% - 30px)!important; max-height: 274px!important;}
+.row .form-group .select-button .btn {height:32px;}
+.row .form-group .select-button .btn.normal{color:#fff !important; }
+.row .form-group .select-button .btn.valid{color:#3f0 !important;}
+.row .form-group .select-button .btn.invalid{color:#ff0000 !important;}
+.management .title-str {cursor:default;}
+.management .title-str.userid, .management .title-str.roleid{cursor:pointer;}
+.management .title-str.disabled {pointer-events: none;}
+.management .title-str a {color:#333;}
+.management .title-str.userid:hover a, .management .title-str.roleid:hover a {color: #337ab7;text-decoration: underline;}
+

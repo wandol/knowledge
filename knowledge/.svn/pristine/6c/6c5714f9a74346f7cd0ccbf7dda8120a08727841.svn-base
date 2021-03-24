@@ -1,0 +1,69 @@
+/*Rich Template*/
+.richarea {background-color:#efefef; border:1px solid #e2e2e2; border-radius: 3px; padding:5px;}
+.richarea .richheader {background-color:#fff; border:1px solid #ccc; border-radius: 3px; padding:5px 5px 0 5px; margin-bottom:5px;}
+.richarea .richheader .btn, .richarea .richheader .btn:focus {background-color:#c4d9e7; border:none; color:#fff; font-size:12px; height:30px; margin-bottom:5px; padding: 6px 10px;}
+.richarea .richheader .btn:hover {background-color:#b1cbdb; border-color:#9d958a;}
+.richarea .richbody {background-color:#fff; border:1px solid #ccc; border-radius: 3px; padding:5px;}
+
+.richtmpl {margin:0 0 5px 0!important;}
+
+.richtmpl .richtmpl-del {float:left; top:3px; right:8px; position:absolute; color:#ccc;}
+.richtmpl .richtmpl-del:hover {color:#908174;}
+.richtmpl .richtmpl-del .btn {border:0; padding:0; background-color:transparent;}
+.richtmpl .richtmpl-del .btn:hover {color:#908174;}
+
+.richtmpl input[type=text]::-ms-clear { display: none; }
+
+.richtmpl.tmpl-input .elem-form .elem {width:100%; height:32px; cursor:pointer; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;} 
+.richtmpl.tmpl-input .elem-form input[type=text] {padding-right:28px;}
+
+.richtmpl.tmpl-expansion .elem-form .elem {width:100%; height:32px; cursor:pointer; padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;}
+.richtmpl.tmpl-expansion .elem-form input[type=text] {padding-right:28px;}
+
+.richtmpl.tmpl-text .elem-form .elem {word-break:break-all; word-wrap:break-word; white-space: pre-wrap; height:auto; min-height: 32px;} 
+.richtmpl.tmpl-text .elem-form textarea {min-height:32px;}
+.richtmpl.tmpl-text .elem-form ol {list-style-type: decimal;}
+.richtmpl.tmpl-text .elem-form .note-editor {font-size:12px;}
+.richtmpl.tmpl-text .elem-form .note-editor .note-editable {font-size:12px;}
+.richtmpl.tmpl-text .elem-form .note-editor .note-codable {font-size:12px;}
+
+.richtmpl.tmpl-image .elem {min-height: 140px; border: 2px dashed rgba(0, 0, 0, 0.1); border-radius: 3px; align-items: center; color:#ccc; /* cursor:pointer; */ display: flex; margin-bottom: 8px;}
+.richtmpl.tmpl-image .elem.loaded {border:1px solid #ccc; min-height:auto; display:block;}
+.richtmpl.tmpl-image .elem .elem-img {max-width:100%; margin:auto; display: flex;}
+ 
+.richtmpl.tmpl-media .elem {width:100%; min-height:auto; text-align:center; align-items: center; cursor:pointer; border-radius: 3px; display: block; color: #555; background-color: #fff; border: 1px solid #ccc;}
+.richtmpl.tmpl-media .elem-edit input[type=text] {padding-right:28px; height:32px; font-size: 12px; line-height: 1.5;}
+.richtmpl.tmpl-audio .elem {height: 100px; display:flex;}
+.richtmpl.tmpl-audio .elem .media-form {width:100%; background-color:#f1f3f4;}
+ 
+.richtmpl.tmpl-link .elem {border-color: #ccc; width:100%; text-align:left; background-color:#fff;}
+.richtmpl.tmpl-link .elem:active {box-shadow: none; -webkit-box-shadow: none;}
+.richtmpl.tmpl-link .elem-edit {border:1px solid #ccc; border-radius: 3px; padding:5px 10px; border-top:0; background-color:#eee;}
+.richtmpl.tmpl-link .elem-edit input {margin-bottom:5px;}
+.richtmpl.tmpl-link .elem-edit input:last-child {margin-bottom:0;}
+
+.richtmpl .richtmpl-border {border: 1px solid #ccc; border-radius: 3px; padding: 8px 8px 8px 8px; background-color:#fff;}
+.richtmpl.tmpl-buttons .elem-form-group {width:100%; margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem-form {margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem {background-color: #ddd; border-color: #ddd; width:100%;}
+.richtmpl.tmpl-buttons .elem:hover {background-color: #ccc; border-color: #ccc;}
+.richtmpl.tmpl-buttons .elem-edit {border:1px solid #ccc; border-radius: 3px; padding:5px 10px; border-top:0;}
+.richtmpl.tmpl-buttons .elem-edit select {margin-bottom:5px; padding:5px; border:1px solid #ccc; border-radius:3px;}
+.richtmpl.tmpl-buttons .elem-edit input {margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem-edit input:last-child {margin-bottom:0;}
+.richtmpl.tmpl-buttons .elem-form-add {margin-bottom:5px;}
+.richtmpl.tmpl-buttons .elem-form-add .btn {color:#555; background-color:#fff; border: 2px dashed rgba(0, 0, 0, 0.1); border-radius: 3px; width:100%; height:32px; font-size: 12px; line-height:1.5; display:block; }
+.richtmpl.tmpl-buttons .elem-form-add .btn:hover {border-color:#aaa; }
+.richtmpl.tmpl-buttons .elem-form-align {text-align:right; font-size:14px;}
+.richtmpl.tmpl-buttons .elem-form-align label {padding-right:10px; text-align:center; vertical-align:middle; font-size:14px; font-weight:normal;}
+.richtmpl.tmpl-buttons .elem-form-align .elem-icon {cursor:pointer; padding: 0; font-size: 20px; border-radius:3px; color:#555; text-align:center; vertical-align:middle;}
+.richtmpl.tmpl-buttons .elem-form-align .elem-icon:hover, .richtmpl.tmpl-buttons .elem-form-align .elem-icon.active {background-color: #ddd;}
+.richtmpl.tmpl-buttons .elem-form-align .elem-icon i {width: 27px;}
+
+.richtmpl .elem-iconelem-icon {font-size:12px; padding:0 5px; } 
+.richtmpl .icon-left {float:left;}
+.richtmpl .icon-right {float:right; color:#999}
+
+.richtmpl.tmpl-image .elem-title { width: 81%; height: 32px; border: 1px solid #ccc; min-height: 32px; display: inline-block;color: #555;font-size: 12px; line-height: 1.5;padding: 5px 10px;}
+.richtmpl.tmpl-image .elem-edit { width: 81%; margin-bottom: 13px; display: inline-block; } 
+.richtmpl.tmpl-image .richtmpl-border button { border-color: #fff; color: #fff; background-color: #ddd; margin-left: 3px; position: absolute; }

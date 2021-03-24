@@ -1,0 +1,48 @@
+html, .login-body { height: 100%; padding: 0; margin: 0; background: url(../img/bg_intro_lg.png) repeat center center;}
+.container { height: 100px; min-height: 100%; min-width:auto; background: url(../img/bg_intro.png) repeat-y top center; width: 1210px; padding-bottom: -30px;}
+.left { width: 766px; text-align: right; padding-top: 205px; padding-right: 152px;}
+.right { width: 425px; padding-top: 353px; background: #aea293; padding-bottom: 150px;}
+.form-wrap { width: 450px; position: relative;}
+.form-wrap label.control-label { width: 128px; font-size: 15px; font-weight: bold; color: white; text-align: left; padding-top: 10px; padding-left: 60px; padding-right: 0;}
+.form-wrap input.form-control { width: 228px; height: 40px; border: none; font-size: 15px;}
+.select-wrap { text-align: left;}
+.select-wrap .scenario-select { width: 228px; border: none; height: 40px; border-radius: 4px; font-size: 14px;}
+
+.form-wrap .dropdown .btn.btn-default { width: 228px; height: 40px; text-align: left; background: #fff; border-radius: 4px; border: 0; box-shadow: none; font-size: 15px;}
+.form-wrap .dropdown .btn.btn-default span { float: right; margin-top: 8px;}
+
+.form-wrap .dropdown ul { border-radius: 0; box-shadow: none; border: none;}
+.form-wrap .dropdown li a { width: 228px; padding-left: 12px;}
+.form-wrap .dropdown li a:hover { background: #ffbc66;}
+.form-wrap .dropdown .btn.btn-default:focus { outline: 1px solid #ff9917;}
+
+.btn.btn-go { position: absolute; bottom: 0; right: 6px; width: 80px; height: 40px; font-size: 15px; font-weight: bold; background: #747272;}
+
+.btn-go,
+.btn-go:focus { background: #605858; border: none; color: white;}
+.btn-go:hover { background: #605858; color: white;}
+
+.form-control:focus,
+.btn.btn-go:focus,
+.btn.btn-go:active { box-shadow: none; outline: 0;}
+.form-control:focus {
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+  -webkit-box-shadow : none;
+}
+.dropdown li:focus,
+.dropdown li a:focus { outline: 0; box-shadow: none;}
+
+/*2017.12.06 add*/
+.left .address { font-size: 14px; color: #646464; text-align: left; padding-left: 120px;}
+.left .version { font-size: 18px; color: #646464; position: absolute; right: 180px; top: 470px;}
+
+.login-container {margin: auto!important; padding:0!important;}
+.login-container .row .right {background:transparent!important;}
+.modal .modal-body p.layer_message {display:inline-block; font-size:14px}
+input.form-control::-webkit-input-placeholder {font-size:13px}
+input.form-control.error {border:1px solid #ff4b4b}
+.control-label a {color:#fff;}
+.control-label a:hover {color:#6b6053;}
+.errormsg {padding-left: 32px; color: red;}

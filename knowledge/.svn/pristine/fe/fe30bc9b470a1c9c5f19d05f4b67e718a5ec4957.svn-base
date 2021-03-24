@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean name="konanPropertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" destroy-method="destroy">
+		<property name="properties">
+	        <map>
+	        	<!-- 공통 URL -->
+	        	<entry key="loginUrl" value="#{global['login.url']}"/>
+	        	<entry key="logoutUrl" value="#{global['logout.url']}"/>
+	        	<entry key="mainUrl" value="#{global['main.url']}"/>
+	        	
+	        	<!-- Analysis Engine -->
+	        	<entry key="kqlUrl" value="http://#{global['search.url']}/kql"/>
+	        	<entry key="ksmUrl" value="http://#{global['search.url']}/ksm" />
+	        	<entry key="url" value="http://#{global['search.url']}/search"/>
+	        	<entry key="basicUrl" value="#{global['search.url']}" />
+	        	<entry key="fltUrl" value="#{global['filter.url']}" />
+	        	<entry key="site" value="#{global['kepri.domain']}" /> <!-- 사이트명 -->
+	        	
+	        	<!-- memchecker -->	        	
+				<entry key="memUrl" value="http://#{global['mem.url']}/memechecker-server/" />
+				<entry key="memDomain" value="#{global['kepri.domain']}" />
+				<entry key="memGroup" value="kepri_mem" />
+				<entry key="memField" value="id,filename" /><!-- 필드명 -->				
+				<entry key="memFrom" value="memechecker.memechecker" /> <!-- 볼륨.테이블 -->
+	        	<!-- memchecker -->
+	        	
+	        	<!-- smartMatch -->	        	
+				<entry key="smUrl" value="http://#{global['sm.url']}" />
+				<entry key="smDomain" value="#{global['kepri.domain']}" />
+				<entry key="smField" value="REPORT_NM" />
+	        	<!-- smartMatch -->	        
+	        	
+	        	<!-- ksf -->
+				<entry key="ksfUrl" value="http://#{global['ksf.url']}/ksf/api/" />
+				<entry key="ksfDomain" value="0" />
+				<entry key="ksfRankingDomain" value="1" />
+				<entry key="ksfMaxResult" value="10" />
+				<!-- ksf -->
+				
+				<!-- sso -->
+				<entry key="ssoUrl" value="#{global['sso.url']}" />
+				
+				<!-- lconf 정보 -->
+				<!-- lconf symantic -->
+				<entry key="boiler_lconf" value="#{global['engine.lconf.symantic.boiler']}" />
+				<entry key="gt_lconf" value="#{global['engine.lconf.symantic.gt']}" />
+				<entry key="st_lconf" value="#{global['engine.lconf.symantic.st']}" />
+				<entry key="gen_lconf" value="#{global['engine.lconf.symantic.gen']}" />
+				<entry key="kepri_lconf" value="#{global['engine.lconf.symantic.kepri']}" />
+				
+				<entry key="boilerSymName" value="#{global['engine.lconf.symantic.boiler']}" />
+				<entry key="boilerSymFileName" value="../data/boiler.rc" />
+				<entry key="nerBoilerName" value="ner_boiler" />
+				<entry key="nerBoilerFileName" value="lconf_kepri.rc" />	
+				
+				<!-- lconf ner -->
+				<entry key="nerLconfList" value="#{global['engine.lconf.ner']}" />						
+				
+				<!-- 운영(true)/개발(false) 라이선스 구분-->
+				<entry key="realLic" value="false" />
+				
+				<!-- CATEGORY -->
+				<entry key="cate_total" value="#{global['search.category.total']}" />	<!-- 전체 -->
+				<entry key="cate_boiler" value="#{global['search.category.boiler']}" />  <!-- 보일러 - 정밀진단 -->
+				<entry key="cate_gt_turbine" value="#{global['search.category.gtturbine']}" />	<!-- 가스터빈 - 정밀진단 -->
+				<entry key="cate_st_turbine" value="#{global['search.category.stturbine']}" />	<!-- 증기터빈 - 정밀진단 -->
+				<entry key="cate_gen_prev" value="#{global['search.category.genprev']}" />	<!-- 발전기 - 예방진단 -->
+				<entry key="cate_gen_ins" value="#{global['search.category.genins']}" />	<!-- 발전기 - 절연진단 -->
+				<entry key="cate_gen_kepri" value="#{global['search.category.kepri']}" />	<!-- 발전기 - 누설흡습 -->
+				<entry key="cate_perform" value="#{global['search.category.perform']}" />	<!-- 성능 -->
+				<entry key="cate_devdoc" value="#{global['develop.document.category']}" />	<!-- 발전문서 -->
+				
+				<entry key="cate_dashboard" value="#{global['dashboard.category.dashboard']}" />	<!-- 대시보드 -->
+				
+				<entry key="repo_detail" value="정밀진단" />	<!-- 성능 -->
+				<entry key="repo_trouble" value="고장진단" />	<!-- 성능 -->
+								
+				<!-- ETC -->
+	        	<entry key="charset" value="#{global['kepri.charset']}" />
+	        	<entry key="searchFd" value="#{global['search.search.field']}" />
+	        	<entry key="searchOpt" value="#{global['search.search.option']}" />
+				<entry key="pageSize" value="10" />
+				<entry key="pageSizeTotal" value="3" />
+				<entry key="orderByValueDESC" value="DESC" />
+				<entry key="orderByValueASC" value="ASC" />
+				<entry key="groupByCount" value="count(*)" />
+				<entry key="limit" value="10" />
+				<entry key="maxLimit" value="50" />
+				<entry key="maxLimit100" value="100" />
+				
+				<entry key="pfGroupField" value="SYMPTOM_KWD,ACTION_KWD,PUBLISH_YM" />
+				<entry key="pfGroupDepthField" value="POWER_COMP_NM,POWER_ST_NM,ST_NO" />
+				<entry key="pfAnalysisField" value="PARTNAME" />
+				
+				<entry key="vrfrom" value="#{global['search.vrpart.from']}" />
+				
+				<!-- 공통 -->
+				<entry key="imgField" value="MD5_KEY,IMG_FILES,IMG_TXTS" />
+				<entry key="imgFieldGenIns" value="MD5_KEY,PATTERN_IMG" />
+				<entry key="allowImgExt" value="jpg,png,tiff,gif,bmp" />
+	
+				<!-- 업로드 정보 -->
+				<entry key="uploadPathWindow" value="#{global['file.upload.window']}" />
+				<entry key="uploadPathLinux" value="#{global['file.upload.linux']}" />	
+				
+				<!-- 이미지 파일 경로 -->
+				<entry key="imagePathWindow" value="#{global['image.path.window']}" />
+				<entry key="imagePathLinux" value="#{global['image.path.linux']}" />	
+				
+				<!-- 페이지명 -->
+				<entry key="pageDashboard" value="대시보드" />
+				<entry key="pageReport" value="기술문서탐색" />
+				<entry key="pagePfSearch" value="진단DB탐색" />
+				<entry key="pagePfAnal" value="진단DB분석" />
+				<entry key="pageVisual" value="텍스트분석 가시화" />
+				<entry key="pageAdmin" value="지식관리" />
+				<entry key="pageDocument" value="발전문서검색" />
+				<entry key="pageCategory" value="카테고리관리" />
+	        </map>
+		</property>		
+	</bean>
+						
+</beans>	

@@ -1,0 +1,113 @@
+.bubble .weather .date { font-size: 12px; margin-bottom: 10px;}
+.bubble .ico-wt { float: left; width: 50px; height: 50px;}
+.bubble .weather > li { margin-bottom: 5px;}
+.bubble .weather .info .wt-style { float: left; margin-left: 10px;}
+.bubble .weather .info .wt-style .temp { font-size: 28px; font-weight: 800; color: #0060ff; line-height: 1;}
+.bubble .weather .info .wt-style .text { font-size: 12px; margin-top: 5px;}
+.bubble .weather .info2 { border-top: 1px solid #dde6ec; margin: 13px -12px 0 -12px; padding-left: 12px; padding-right: 12px; margin-bottom: -5px;}
+.bubble .weather .info2 li { display: inline-block; font-size: 13px; color: #787878; margin-top: 10px;}
+.bubble .weather .info2 li+li { margin-left: 10px;}
+.bubble .weather .info2 li img { float: left; margin-right: 5px;}
+.bubble .weather .info2 li span { float: left;}
+
+.bubble .weather .info .ico-01 { background: url(../../img/weather/ico-w-lg-01.png) no-repeat 0 0; }
+.bubble .weather .info .ico-02 { background: url(../../img/weather/ico-w-lg-02.png) no-repeat 0 0; }
+.bubble .weather .info .ico-03 { background: url(../../img/weather/ico-w-lg-03.png) no-repeat 0 0; }
+.bubble .weather .info .ico-04 { background: url(../../img/weather/ico-w-lg-04.png) no-repeat 0 0; }
+.bubble .weather .info .ico-05 { background: url(../../img/weather/ico-w-lg-05.png) no-repeat 0 0; }
+.bubble .weather .info .ico-06 { background: url(../../img/weather/ico-w-lg-06.png) no-repeat 0 0; }
+.bubble .weather .info .ico-07 { background: url(../../img/weather/ico-w-lg-07.png) no-repeat 0 0; }
+.bubble .weather .info .ico-08 { background: url(../../img/weather/ico-w-lg-08.png) no-repeat 0 0; }
+.bubble .weather .info .ico-09 { background: url(../../img/weather/ico-w-lg-09.png) no-repeat 0 0; }
+.bubble .weather .info .ico-10 { background: url(../../img/weather/ico-w-lg-10.png) no-repeat 0 0; }
+.bubble .weather .info .ico-11 { background: url(../../img/weather/ico-w-lg-11.png) no-repeat 0 0; }
+.bubble .weather .info .ico-12 { background: url(../../img/weather/ico-w-lg-12.png) no-repeat 0 0; }
+.bubble .weather .info .ico-13 { background: url(../../img/weather/ico-w-lg-13.png) no-repeat 0 0; }
+.bubble .weather .info .ico-14 { background: url(../../img/weather/ico-w-lg-14.png) no-repeat 0 0; }
+
+.bubble .weather .info2 .ico-w { width: 18px; height: 18px; }
+.bubble .weather .info2 .ico-w1 { background: url(../../img/weather/ico-w1.png) no-repeat 0 0; }
+.bubble .weather .info2 .ico-w2 { background: url(../../img/weather/ico-w2.png) no-repeat 0 0; }
+
+.bubble .btn-link { display: block; min-width: 253px; width: 100%; background: #fff; text-align: center; border-radius: 19px;  color: #333; margin-top: 10px; min-height:38px; line-height:22px; padding:6px 12px;}
+.bubble .btn-link:hover { background: #d3e0e9; text-decoration: none;}
+.bubble .btn-link:focus { text-decoration: none;}
+.bubble .btn-link img { margin-right: 14px;}
+/*.bubble .btn-link2 { margin-top: 5px;}*/
+
+/* 2018.10.12 added */
+.bubble a.btn-link { /*line-height: 38px;*/}
+.bubble a.btn-link img { margin-top: -3px;}
+/*---*/
+
+/* 2018.11.09 added */
+.bubble .highright { font-size: 15px; color: #2E9AFE; }
+/*---*/
+
+/* Carousel
+------------------------------------*/
+.carousel { margin-bottom: 15px;}
+.carousel-indicators { width: 100%; margin-left: 0; left: 0; bottom: -15px;}
+.carousel-indicators li { display: inline-block; width: 19px; height: 2px; background: #c5c6c7; border: none; margin: 0;}
+.carousel-indicators .active { width: 19px; height: 2px; background: #6894bf; border: none;}
+
+.carousel-control { width: 10%;}
+.carousel-control.left,
+.carousel-control.right { background: none;}
+.glyphicon-chevron-left:before { content: url(../img/ico-left.png);}
+.glyphicon-chevron-right:before { content: url(../img/ico-right.png);}
+
+/* p-info     modified 2018.09.20 
+------------------------------------*/
+.p-info .sub-info { color: #817466;}
+.p-info .tag { display: inline-block; /* margin-top: 3px; margin-bottom: -10px; */}
+.p-info .tag .btn { display: block; float: left; padding: 8px 10px; border: 2px solid #b7cee0; border-radius: 19px; background: #fff; min-width: 60px; text-align: center; text-decoration: none; color: #333; -webkit-box-shadow: none; box-shadow: none; outline: none; margin-right: 5px; /* margin-bottom: 5px; */}
+.p-info .tag .btn:last-child { margin-right: 0;}
+.p-info .tag .btn:hover { background: #e9f0f4;}
+.p-info .tag .btn img { margin: -3px 5px 0 5px;} /* 2018.10.12 added */
+
+.bubble>div>p, .bubble>div>img, .bubble>div>a, .bubble>div>ul, .bubble>div>button { margin: 5px 0px 5px 0px!important; }   
+.bubble>div>p { white-space: pre-wrap; word-break: break-all;}
+
+/*-----------------------------------------
+    Air Korea
+-------------------------------------------*/
+.dust { width: 250px;}
+/*.dust .title { margin-bottom: 10px;}*/
+.dust .title div { float: left;}
+.dust .title .item { font-size: 12px; margin-left: 40px; padding-top: 10px;}
+.dust .title .item .time2 { font-size: 11px;}
+.dust .title .count { font-size: 36px; font-weight: 700; margin-left: 10px;}
+.dust .title .count .unit { font-size: 18px; font-weight: 400;}
+.dust .title .count .unit sup { font-size: 12px;}
+
+.dust .progress { background: none; -webkit-box-shadow: none; -ms-box-shadow: none; box-shadow: none; height: 40px; margin-bottom: 0; width:250px;}
+.dust .progress .progress-bar { position: relative; background: none; -webkit-box-shadow: none; -ms-box-shadow: none; box-shadow: none;}
+.dust .progress .progress-bar .tooltip { opacity: 1; position: absolute; right: -20px; line-height: 24px;}
+.dust .progress.good .tooltip-inner { background: #32a1ff;}
+.dust .progress.soso .tooltip-inner { background: #00c73c;}
+.dust .progress.bad .tooltip-inner { background: #fd9b5a;}
+.dust .progress.vbad .tooltip-inner { background: #ff5959;}
+
+.dust .progress.good .tooltip-arrow { border-top-color: #32a1ff;}
+.dust .progress.soso .tooltip-arrow { border-top-color: #00c73c;}
+.dust .progress.bad .tooltip-arrow { border-top-color: #fd9b5a;}
+.dust .progress.vbad .tooltip-arrow { border-top-color: #ff5959;}
+
+.dust .range-box { margin-bottom: 10px;}
+.dust .range-box .bar li { float: left; text-align: right; width: 61px; display: inline-block; font-size: 10px;  border-top: 2px solid #ccc; padding-top: 3px;}
+.dust .range-box .bar li+li { margin-left: 2px;}
+.dust .range-box .bar li.good { border-top-color: #32a1ff;}
+.dust .range-box .bar li.soso { border-top-color: #00c73c;}
+.dust .range-box .bar li.bad { border-top-color: #fd9b5a;}
+.dust .range-box .bar li.vbad { border-top-color: #ff5959;}
+
+.dust .list-air { width: 250px;}
+.dust > .list-air > ul > li { display: inline-block; float: left; width: 125px;}
+.dust .list-air ul li { font-size: 11px;}
+.dust .list-air ul > li > ul > li  { line-height: 20px;}
+.dust .list-air ul li ul li span { width: 65px; display: inline-block; padding-left: 10px;}
+.dust .list-air strong.good { color: #32a1ff;}
+.dust .list-air strong.soso {color: #00c73c;}
+.dust .list-air strong.bad { color: #fd9b5a;}
+.dust .list-air strong.vbad { color: #ff5959;}

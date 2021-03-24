@@ -1,0 +1,67 @@
+/* Scenario Detail */
+.scn-header .right-btn-area {position: fixed; right: 20px;}
+
+.scn_title {display: inline-block; margin: 0; vertical-align: middle; cursor:pointer;}
+.scn_title .btn-scenario {color: #b1a799;}
+.scn_title .btn-scenario:hover {color: #9d958a;}
+
+.scn_button {
+	display: inline-block;
+	float: right;
+}
+
+.container.scenariodetail .form-inline {height: 40px; padding-left:30px; padding-right:30px;}
+
+.container.scenariodetail #flow {
+	float: left;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	display: flex;
+	background: -webkit-linear-gradient(top, #fff 1px, transparent 1px), -webkit-linear-gradient(left, #fff 1px, #ececec 1px);
+	background: -moz-linear-gradient(top, #fff 1px, transparent 1px), -moz-linear-gradient(left, #fff 1px, #ececec 1px);
+	background: linear-gradient(to top, #fff 1px, transparent 1px), linear-gradient(to left, #fff 1px, #ececec 1px);
+	background-size: 40px 40px;
+	/*border-right: 1px solid #ececec;
+	border-bottom: 1px solid #ececec;
+	 position: relative!important;
+	min-width: 1200px; */
+	margin : 70px 0 0px 220px;
+	position: absolute;
+}
+
+.container.scenariodetail.full #flow {margin-left:0;}
+
+.container.scenariodetail #flow .jtk-connector {z-index: 1; }
+.container.scenariodetail #flow .jtk-hover {z-index: 5;}
+
+.action {
+	position: absolute;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	z-index: 2;
+	cursor: move;
+	background: #fff;
+	margin: 0;
+}
+.action .self_line {
+	width: 83px; 
+	height: 82px;
+	display: inline-block;
+	position: relative;
+	float: left;
+	top: -135px;
+	left: -53px;
+	background: transparent url(../img/line_me.png) no-repeat center top;
+}
+
+.action .self_line:hover { background: transparent url(../img/line_me_hover.png) no-repeat center top;}
+
+.action:hover, .action.active { border: 2px solid #2682bd; }
+.action.has-error { border: 2px solid #f67b7b; }
+.action.has-error:hover { border: 2px solid #ff0000; }
+
+.action .b-title { word-break: break-all; width: 130px; display: inline-block;}
+
+/*.scenario .row .panel-body .group:hover a.stitle {text-decoration:none; color:#bde5ff }*/
