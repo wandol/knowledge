@@ -10,7 +10,6 @@
 <script type="text/javascript">
 $(function() {
 	function ssoCheck() {
-		debugger;
 		$.ajax({
 			type: "GET",
 			url : $('#his_ssoUrl').val(),
